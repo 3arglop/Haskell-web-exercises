@@ -44,5 +44,6 @@
 
     var confirmed = confirm('Are you sure you want to do XYZ?');
     console.log(confirmed);
+
     <!--WILL BE EITHER TRUE OR FALSE-->
 
