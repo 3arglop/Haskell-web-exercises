@@ -1,0 +1,173 @@
+// this is a single line comment 
+
+/**
+ *This 
+ *Is
+ *A
+ *Multi-line
+ *Comment
+ */
+
+ /* 
+ this is also acceptable because its
+ inside
+ the bracket
+ */
+
+ /* Primitive types in JS
+ 
+ boolean true/false (making decisions; yes or no Qs)
+
+ number ###, decimal, integers, negatives
+
+ string "Hello Codeup" & 'Wassup'
+
+ undefined unassigned var /= value & type
+
+ null special keyword = lack of value
+
+ backslash (/) used on characters such as ! & ?
+
+-------------------OPERATORS----------------------
+
+ expressions 3 + 5 (operators + primitive type)
+
+ typeof (special operator) produce a string containing the type 
+    ex: typeof 42
+        console: 'number'
+
+        typeof '42'
+        console: 'string'
+
+        typeof true
+        console: 'boolean'
+
+% (modulus) produces remainder after div two numbers
+
+= (simple assignment operator) store the value of its right-hand 
+operand into the memory location denoted by the left-hand operand
+    ex: var x = 5;
+        x = x + 3;
+        x; 
+        console: 8
+
+----------------------ARITHMETIC-------------------
+
++ ADDITION
+
+- SUBTRACTION 
+
+* MULTIPLICATION
+
+/ DIVISION
+
+---------------------------------------------------
+
+STRING CONCATENATION: put together two strings with (+) operator 
+    ex: 'Hello, ' + 'World!'
+        console: 'Hello, World!'
+
+---------------------------------------------------
+
+LOGICAL BOOLEAN - OPERATORS
+    combines boolean values such as: A user can edit a message if 
+    they are the author of the message or they are an admin.
+
+&& (AND) true for both operands
+
+|| (OR) true if either operands
+
+! (NOT) the opposite
+
+__________________________________________________
+
+RULES
+
+AND 
+    true && true    true
+    true && false   false
+    false && true   false
+    false && false  false
+
+OR 
+    true || true    true
+    true || false   true
+    false || true   true
+    false || false  false
+
+NOT
+    !true   false
+    !false  true
+
+*like the arithmetic operations, 
+logical operations can be grouped with parentheses:
+    ex: false && false || true // true
+        false && (false || true) // false
+
+___________________________________________________
+
+COMPARISON
+
+    ==   Equal in value
+    === Equal in type and value
+    !=  Not equal in value
+    !== Not equal in type and value
+
+____________________________________________________
+
++=  x += 2; x = x + 2;
+-=  x -= 2; x = x - 2;
+*=  x *= 2; x = x * 2;
+/=  x /= 2; x = x / 2;
+%=  x %= 2; x = x % 2;
+
+__________________________________________________
+
+parseInt (str to integer)
+
+parseFloat (str to decimal)
+
+(IN ORDER TO COME OUT AS A NUMBER INSTEAD OF NaN, 
+YOU MUST HAVE A NUMBER FIRST AND NOT CHARACTERS)
+
+___________________________________________________
+
+WORKING WITH STRINGS
+ */
+
+.length() // describes # of characters in str
+    ex: var name = 'will';
+        name.length();
+        name;
+
+.indexOf() // returns index of specified character in str
+    ex. name.indexOf(i);
+
+.replace(find, replace) // returns copy of str after a substitution 
+    ex. name.replace(' ', 's');
+        price = price.replace('$', '');
+
+.substring(fromIndex, toIndex) // returns subset of original str based on instructions
+    ex. name.substring(1, 4);
+
+.toUpperCase() // str in Upper case
+    ex. name.toUpperCase();
+
+.toLowerCase() // str in Lower case
+    ex. name.toLowerCase();
+
+.trim() // whitespace is removed at the beggining
+        // and end of str 
+        ex. name = ' will';
+            name.trim();
+            name;
+
+//OTHER EXAMPLES COMBINED
+
+name = name.substring(0, 1).toUpperCase() + name.substring(1, 4).toLowerCase();
+______________________________________________________
+
+
+'This is a single backslash character: "\\"'
+"Here's a number: \"two\""
+
