@@ -1,0 +1,27 @@
+// BASICS 101
+
+A. INLINE JS EXAMPLE
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline JS</title>
+</head>
+<body>
+    <script>
+        // JavaScript code goes here
+    </script>
+</body>
+</html>
+----------------------------------------------------
+B. EXTERNAL JS EXAMPLE
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External JS</title>
+</head>
+<body>
+    <script src="js/external.js"></script>
+</body>
+</html>
+------------------------------------------------------
+USING STRICT
