@@ -53,11 +53,12 @@
 
     <!--WILL BE EITHER TRUE OR FALSE-->
 
- <!--PROMPT-->
- <!--ex.-->
+<!--PROMPT-->
+<!--ex.-->
 
     var firstName = prompt("What is your first name\?");
     var lastName = prompt("What is your last name\?");
     console.log(firstName + " " + lastName);
+
 
 
