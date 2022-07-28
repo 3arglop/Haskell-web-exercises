@@ -35,7 +35,13 @@
 
 <!--ALERT-->
 <!--ex.-->
-    alert("Message goes here.");
+
+    var myAge = 24;
+    console.log(myAge);
+    console.log("THIS IS MY EXTERNAL FILE");
+    alert(myAge);
+    alert("THIS IS MY EXTERNAL FILE"); // this reads last bc JS reads top to bottom
+
 <!--TAKES IN STR MESSAGE AS AN ARGUMENT-->
 
 <!--CONFIRM-->
@@ -46,4 +52,12 @@
     console.log(confirmed);
 
     <!--WILL BE EITHER TRUE OR FALSE-->
+
+ <!--PROMPT-->
+ <!--ex.-->
+
+    var firstName = prompt("What is your first name\?");
+    var lastName = prompt("What is your last name\?");
+    console.log(firstName + " " + lastName);
+
 
