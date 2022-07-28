@@ -1,6 +1,6 @@
-// BASICS 101
+<!--BASICS 101-->
 
-A. INLINE JS EXAMPLE
+<!--A. INLINE JS EXAMPLE-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +12,8 @@ A. INLINE JS EXAMPLE
     </script>
 </body>
 </html>
-----------------------------------------------------
-B. EXTERNAL JS EXAMPLE
+
+<!--// B. EXTERNAL JS EXAMPLE-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,5 +23,11 @@ B. EXTERNAL JS EXAMPLE
     <script src="js/external.js"></script>
 </body>
 </html>
-------------------------------------------------------
-USING STRICT
+
+<!--USING STRICT-->
+    <!--allows JS' silent errors to be shown-->
+
+  "use strict";
+  <!--rest of JS code-->
+  <!--THIS STR NEEDS TO BE AT THE TOP OF THE JS FILE
+  OR SCRIPT BLOCK-->
