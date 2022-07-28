@@ -27,7 +27,22 @@
 <!--USING STRICT-->
     <!--allows JS' silent errors to be shown-->
 
-  "use strict";
+      "use strict";
+
   <!--rest of JS code-->
   <!--THIS STR NEEDS TO BE AT THE TOP OF THE JS FILE
   OR SCRIPT BLOCK-->
+
+<!--ALERT-->
+<!--ex.-->
+    alert("Message goes here.");
+<!--TAKES IN STR MESSAGE AS AN ARGUMENT-->
+
+<!--CONFIRM-->
+    <!--THE FOLLOWING LINE WILL SHOW THE
+    OK/CANCEL CONFIRM DIALOG-->
+
+    var confirmed = confirm('Are you sure you want to do XYZ?');
+    console.log(confirmed);
+    <!--WILL BE EITHER TRUE OR FALSE-->
+
