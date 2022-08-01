@@ -34,9 +34,9 @@ b. without it, its just another variable with no code inside
 
 5.
 DEFINING FUNCTIONS
-    function myFunction(input) {
-        var output = /* do something to calculate output */;
-        return output;
+    function name(parameter) {
+        var body = /* do something to calculate output */;
+        return;
     }
 
 a. this is the basic syntax for function
@@ -49,12 +49,12 @@ a. this is the basic syntax for function
 
 6.
 CONT. DEFINING FUNCTIONS
-    function increment(x) {
-        return x + 1;
+    function increment(x) { // parameter goes here
+        return x + 1; // body goes here
     }
 
-    var four = increment(3);
-    var six = increment(increment(increment(3)));
+    var four = increment(3); // argument
+    var six = increment(increment(increment(3))); // argument
                +1           +1            +1
 a. the value for var four is 4 because x = 3 therefore 3 + 1 = 4
 b. the value for six is 6 because x = 3 inside three parenthesis.
@@ -82,6 +82,7 @@ ANONYMOUS FUNCTIONS
 
 a. creates a function without a name stored in a variable
 b. considered a function expression (I'm guessing x in this case?)
+c. you can use this to decrease space used to code
 
 9.
 ARGUMENTS/PARAMETERS
@@ -150,3 +151,13 @@ FUNCTION SCOPE
     scopeExample();
     alert(localVar); // localVar is NOT accessible here and this will produce an error
 
+13.
+IMMEDIATELY-INVOKED FUNCTION EXPRESSION (IIFE)
+    (function(parameter) {
+        var treasure = 100;
+        return;
+    })(arguments)
+
+a. we use to isolate variables from the global scope
+b. prevents cross contamination
+c. enclose all of the JS scope including function definitions
