@@ -1,4 +1,49 @@
 "use strict";
+console.log("Hello Conditions");
+
+//EXAMPLE
+var username = prompt("Enter your username").toLowerCase();
+var password = prompt("Enter your password").toLowerCase();
+
+var usernameOne = "username"
+var passwordOne = "password"
+
+    if(username === usernameOne && password === passwordOne) {
+        alert("Welcome, you are logged in\!");
+    } else if(username !== usernameOne && password !== passwordOne) {
+        alert("Forgot Username/Password\?");
+    } else if(username !== usernameOne) {
+        alert("Invalid Username");
+    } else if(password !== passwordOne) {
+        alert("Invalid Password");
+    } else {
+            alert("ERROR");
+        }
+
+//EXAMPLE 2
+var isRaining; //declare variable
+    isRaining = confirm("Is it raining\?"); //add value to variable
+    alert((isRaining)? "Bring an umbrella, friend\!": "What a sunny day\!");
+//ANOTHER SYNTAX
+    // isRaining ? console.log("Bring an umbrella, friend): console.log("What a sunny day");
+
+//EXAMPLE 3
+var favMovie = prompt("What is your favorite movie\?").toLowerCase();
+
+switch(favMovie) {
+    case "Toy Story":
+        alert("Really\?");
+        break;
+    case "The Lion King":
+        alert("I see..");
+        break;
+    case "The Devil Wears Prada":
+        alert("That's my favorite movie too\!");
+        break;
+    default:
+        alert("Gotcha\!");
+        break;
+}
 
 /* 
 ########################################################################## 
@@ -25,16 +70,14 @@ the
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-function analyzeColor() {
 
-}
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list 
-(this
-//                  will contain a different color every time the page 
-loads)
+
+// will contain a different color every time the page
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 
 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
