@@ -1,0 +1,152 @@
+FUNCTIONS
+
+EXAMPLES
+
+1.
+PASSING ARGUMENTS
+    someFunction(); // call the function someFunction() - no argument
+    parseInt("42"); // call the parseInt function with an argument of "42"
+
+2.
+FUNCTION PRODUCES OUTPUT, OUTPUT CAN BECOME A VARIABLE OR PASS AS
+ANOTHER FUNCTION
+    var result = doSomething(); // Result now holds the value of what doSomething() returns
+    console.log(doSomething()); // The value doSomething() returns is passed to console.log
+
+3.
+    var myString = "42";
+    var myNumber = parseInt(myString);
+
+a. this calls for the parseInt function stated above
+b. a new variable named myString takes in the argument of the function parseInt
+c. a new variable is made named myNumber that takes in the value of myString
+    and creates a new parseInt value by stating myString as the argument
+
+4.
+PARENTHESIS
+    // This code will *not* run the function
+    doSomething;
+    parseInt;
+
+a. the parenthesis after the function name is what tells JS
+    we wish to run
+b. without it, its just another variable with no code inside
+
+5.
+DEFINING FUNCTIONS
+    function myFunction(input) {
+        var output = /* do something to calculate output */;
+        return output;
+    }
+
+a. this is the basic syntax for function
+    - keyword function
+    - name myFunction
+    - parenthesis containing the input (parameter)
+    - curly braces
+    - body aka calculations; orders inside the curly braces
+    - return statement inside the body aka state the output
+
+6.
+CONT. DEFINING FUNCTIONS
+    function increment(x) {
+        return x + 1;
+    }
+
+    var four = increment(3);
+    var six = increment(increment(increment(3)));
+               +1           +1            +1
+a. the value for var four is 4 because x = 3 therefore 3 + 1 = 4
+b. the value for six is 6 because x = 3 inside three parenthesis.
+   it takes in the input plus one each time
+
+7.
+MORE THAN ONE RETURN VALUE WITHIN THE BODY
+    function increment(someNumber) {
+        return someNumber + 1;
+        console.log('you will never see this.');
+        return someNumber + 2; // This will never run
+    }
+
+a. a function will only ever execute one return statement,
+    and when a return statement is reached, no more code in the
+    function will be evaluated
+
+8.
+ANONYMOUS FUNCTIONS
+    var increment = function(x) {
+        return x + 1;
+    };
+
+    var two = increment(1);
+
+a. creates a function without a name stored in a variable
+b. considered a function expression (I'm guessing x in this case?)
+
+9.
+ARGUMENTS/PARAMETERS
+    function sum(a, b) {
+        var result = a + b; // technically the `result` variable is not necessary
+        return result;      // instead we could just return a + b directly
+    }
+
+    var x = 3;
+    var seven = sum(x, 4);
+
+a. parameters: a & b
+b. arguments: x & 4
+c. multiple parameters are seperated by commas
+d. syntax for arguments is the same
+
+10.
+FUNCTION WITHOUT RETURN STATEMENT/PARAMETER
+   function shout(message) {
+       alert(message.toUpperCase() + "!!!");
+   }
+
+   var returnValue = shout('hello there');
+   console.log(returnValue); // undefined
+
+a. the return value will be undefined
+b. inputs and outputs are optional
+c. a function without a parameter will only ignore any argument stated
+
+    // a function with no parameters and no return value
+    function sayHello() {
+        alert('hello there!');
+    }
+
+    sayHello("codeup"); // "codeup" is ignored
+
+11.
+FUNCTION SCOPE
++ GLOBAL VARIABLES
+    // declare a global variable
+    var globalVar = "Look, I'm Global!";
+
+    // define the sayHello function
+    function sayHello() {
+        // globalVar is accessible here since the sayHello function scope is a sub-scope of the global scope
+        alert(globalVar);
+    }
+
+    sayHello();
+
+a. variables outside a function is considered "global" and in the global scope
+b. these can be accessed by ant script or functions
+c. will be present until script ends aka when the user leaves the page
+    or has closed their browser
+12.
+FUNCTION SCOPE
++ LOCAL VARIABLES
+    var globalVar = "Look, I'm Global!"; // declare a global variable
+
+    function scopeExample() {
+        var localVar = "Look, I'm Local!"; // declare a local variable
+        alert(localVar); // localVar is accessible here
+        alert(globalVar); // globalVar is accessible here
+    }
+
+    scopeExample();
+    alert(localVar); // localVar is NOT accessible here and this will produce an error
+
