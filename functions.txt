@@ -160,4 +160,4 @@ IMMEDIATELY-INVOKED FUNCTION EXPRESSION (IIFE)
 
 a. we use to isolate variables from the global scope
 b. prevents cross contamination
-c. enclose all of the JS scope including function definitions
+c. enclose all the JS scope including function definitions
