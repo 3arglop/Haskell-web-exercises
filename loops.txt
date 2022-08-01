@@ -1,0 +1,139 @@
+LOOPS
+
+1.
+WHILE LOOPS
+    while (/*condition*/) {
+        // body
+    }
+
+a. WHILE loop is a basic construct
+b. only runs if the condition is true
+
+EXAMPLE
+    var i = 0;
+
+    while (i < 10) {
+        console.log('while loop iteration #' + i);
+        i++;
+    }
+
+a. because (i) is not equal or greater than 10, it will go through a loop
+    until it reaches the last true statement which is 9, therefore
+    console.log('while loop iteration #9'); will be the last statement
+
+EXAMPLE
+        var i = 10;
+
+        while (i < 10) {
+            console.log('while loop iteration #' + i);
+            i++;
+        }
+
+b. in this case, (i) is equal to 10, the loop will not run because the
+    variable is not compatible with the parameter; it's a false statement
+    with an undefined value
+
+2.
+DO WHILE
+  do {
+      //body
+  } while(/*condition*/);
+
+a. DO WHILE loop evaluates condition at the end instead of the beginning
+
+EXAMPLE
+    var i = 10;
+
+    do {
+        console.log('while loop iteration #' + i);
+        i++;
+    } while (i < 10);
+
+a. the DO block will execute first
+b. the WHILE condition is then checked to decide if the loop continues
+c. in this example, the console will return with the statement
+    "while loop iteration #10" and stop after checking the condition of
+    i < 10 because the value of (i) has reached its condition
+
+3.
+FOR LOOPS
+    for (/*initialization*/; /*condition*/; /*increment*/) {
+        // body
+    }
+
+a. FOR loop is a looping mechanism
+b. this is the basic syntax
+c. may cause infinite loop
+
+EXAMPLE
+    for (var i = 0; i < 10; i++) {
+        console.log('for loop iteration #' + i);
+    }
+
+a. in this example, FOR loop takes in 3 expressions:
+    -var i = 0; initialization
+    -i < 10; condition
+    -i++; increment
+
+EXAMPLE
+    var i = 0;
+    // DONT DO THIS
+    for (; i < 10;) {
+        console.log('for loop iteration #' + i);
+        i++;
+    }
+
+b. this example shows without the first (var i = 0) and third (i++)
+    expressions; these are optional
+c. this is similar to a WHILE loop
+
+EXAMPLE
+    for (var i = 0, j = 9; i < 10; i++, j--) {
+        console.log('for loop iteration #' + i + ', j = ' + j);
+    }
+
+d. uses additional initializations and increments by using commas
+
+4.
+BREAK AND CONTINUE
++BREAKING OUT OF A LOOP
+    var numberToStopAt = 5;
+
+    for (var i = 1; i < 100; i++) {
+
+        console.log('Loop counter is: ' + i);
+
+        if (i === numberToStopAt) {
+            console.log('We have reached the stopping point: break!');
+            // use the break keyword to exit from the while loop
+            break;
+            // nothing after the break will get processed
+            console.log('You will never see this line.');
+        }
+    }
+
+a. BREAK keyword allows you to exit the loop at any given time
+b. in this example, the loop will take in the value of the variable
+    numberToStopAt and BREAK the loop when (i) reaches 5 despite
+    the condition that states (i) is < 100
+c. BREAK also works in a WHILE loop
+
+5.
+BREAK AND CONTINUE
++CONTINUING THE NEXT ITERATION OF A LOOP
+    'use strict';
+
+    for (var i = 1; i < 100; i++) {
+
+        if (i % 2 !== 0) {
+            // number isn't even
+            // odd numbers aren't as cool
+            // skip the rest of the loop and continue with the next iteration
+            continue;
+        }
+
+        console.log('Here is a lovely even number: ' + i);
+    }
+
+a. CONTINUE keyword allows you to skip to the next loop
+b.
