@@ -76,7 +76,7 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 function analyzeColor(color) {
-    return color
+    return color;
 }
 
 
