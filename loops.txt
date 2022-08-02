@@ -71,9 +71,10 @@ EXAMPLE
     }
 
 a. in this example, FOR loop takes in 3 expressions:
-    -var i = 0; initialization
+    -var i = 0; initialization (takes in a value of the variable declared. the variable has to be declared before the initialization)
     -i < 10; condition
     -i++; increment
+a1. a different syntax can be: (init; condition; var =+ number)
 
 EXAMPLE
     var i = 0;

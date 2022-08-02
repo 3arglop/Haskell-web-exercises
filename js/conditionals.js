@@ -2,48 +2,48 @@
 console.log("Hello Conditions");
 
 //EXAMPLE
-var username = prompt("Enter your username").toLowerCase();
-var password = prompt("Enter your password").toLowerCase();
+//var username = prompt("Enter your username").toLowerCase();
+//var password = prompt("Enter your password").toLowerCase();
 
-var usernameOne = "username"
-var passwordOne = "password"
+//var usernameOne = "username"
+//var passwordOne = "password"
 
-    if(username === usernameOne && password === passwordOne) {
-        alert("Welcome, you are logged in\!");
-    } else if(username !== usernameOne && password !== passwordOne) {
-        alert("Forgot Username/Password\?");
-    } else if(username !== usernameOne) {
-        alert("Invalid Username");
-    } else if(password !== passwordOne) {
-        alert("Invalid Password");
-    } else {
-            alert("ERROR");
-        }
+//    if(username === usernameOne && password === passwordOne) {
+//        alert("Welcome, you are logged in\!");
+//    } else if(username !== usernameOne && password !== passwordOne) {
+//        alert("Forgot Username/Password\?");
+//    } else if(username !== usernameOne) {
+//        alert("Invalid Username");
+//    } else if(password !== passwordOne) {
+//        alert("Invalid Password");
+//    } else {
+//            alert("ERROR");
+//        }
 
 //EXAMPLE 2
-var isRaining; //declare variable
-    isRaining = confirm("Is it raining\?"); //add value to variable
-    alert((isRaining)? "Bring an umbrella, friend\!": "What a sunny day\!");
+//var isRaining; //declare variable
+//    isRaining = confirm("Is it raining\?"); //add value to variable
+//    alert((isRaining)? "Bring an umbrella, friend\!": "What a sunny day\!");
 //ANOTHER SYNTAX
     // isRaining ? console.log("Bring an umbrella, friend): console.log("What a sunny day");
 
 //EXAMPLE 3
-var favMovie = prompt("What is your favorite movie?").toLowerCase();
+//var favMovie = prompt("What is your favorite movie?").toLowerCase();
 
-switch(favMovie) {
-    case "toy story":
-        alert("To infinity and beyond!");
-        break;
-    case "the lion king":
-        alert("I see....");
-        break;
-    case "the devil wears prada":
-        alert("That's my favorite movie too!");
-        break;
-    default:
-        alert("Gotcha!");
-        break;
-}
+//switch(favMovie) {
+//    case "toy story":
+//        alert("To infinity and beyond!");
+//        break;
+//    case "the lion king":
+//        alert("I see....");
+//        break;
+//    case "the devil wears prada":
+//        alert("That's my favorite movie too!");
+//        break;
+//    default:
+//        alert("Gotcha!");
+//        break;
+//}
 
 /* ########################################################################## */
 
@@ -75,8 +75,24 @@ switch(favMovie) {
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-function analyzeColor(color) {
-    return color;
+function analyzeColor(colors) {
+    if(colors === 'red') {
+        alert("Red for apples!")
+    } else if(colors === 'orange') {
+        alert("Orange for papaya!")
+    } else if(colors === 'yellow') {
+        alert("Yellow for bananas!")
+    } else if(colors === 'green') {
+        alert("Green for spinach!")
+    } else if(colors === 'blue') {
+        alert("Blue for blueberries!")
+    } else if(colors === 'indigo') {
+        alert("Indigo like a plum!")
+    } else if(colors === 'violet') {
+        alert("Violet like...")
+    } else {
+        alert("I don't have a comparison for this color!")
+    }
 }
 
 
@@ -86,10 +102,14 @@ function analyzeColor(color) {
  * You should see a different message every time you refresh the page
  */
 
+console.log(analyzeColor(randomColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+
+
 
 /**
  * TODO:
@@ -97,6 +117,9 @@ function analyzeColor(color) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var userColor = prompt("What is your favorite color?").toLowerCase();
+alert(analyzeColor(userColor));
 
 /* ########################################################################## */
 
@@ -120,6 +143,17 @@ function analyzeColor(color) {
  * return value.
  */
 
+function calculateTotal(lucky, total) {
+    switch(lucky) {
+        case 0: return total;
+        case 1: return total - (total * 0.10)
+        case 2: return total - (total * 0.25)
+        case 3: return total - (total * 0.35)
+        case 4: return total - (total * 0.50)
+        case 5: return 'Free!!!'
+    }
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -129,7 +163,9 @@ function analyzeColor(color) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
+
+
 
 /**
  * TODO:
@@ -149,3 +185,20 @@ function analyzeColor(color) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var isTrue = confirm("What is your number\?");
+if(isTrue) {
+    var yourNumber = prompt("Nice number");
+
+    if(yourNumber % 2 === 0) {
+        alet("That number is even\!");
+    } else if(yourNumber % 2 !== 0) {
+        alert("That number is odd\!");
+}}
+var newNum = yourNumber + 100;
+alert('${yourNumber} + 100 = ${newNum)')
+if(yourNumber < 0) {
+    alert("That's a negative nunber ${yourNumber}")
+} else if(yourNumber > 0) {
+    alert("That's a positive ${yourNumber)");
+}
