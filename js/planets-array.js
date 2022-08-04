@@ -44,7 +44,7 @@ console.log("Time to seek some planets!");
     console.log("Reversing the order of the planets array.");
     console.log(planets);
 
-    planets.sort()
+    planets.sort();
     console.log("Sorting the planets array.");
     console.log(planets);
 })();
