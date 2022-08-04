@@ -1,0 +1,116 @@
+ARRAYS
+
+1.
+DECLARING AN ARRAY
+    [] // an empty array
+
+    [1] // an array with one element
+
+    [1, 2, 3, 4, 5] // an array with 5 elements, seperated by commas
+
+    ["one", 42, [8, 9, 10]] // an array with 3 elements all of different types
+    // notice that the array above does *not* have 5 elements, rather the last
+    // element is itself an array with 3 elements in it
+
+a. this is considered an array literal
+    number literal = (42) vs string literals = ('codeup')
+
+2.
+ARRAYS STORED IN A VARIABLE
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+a. var shapes is declared with an ARRAY of 4 STRINGS
+
+3.
+COUNTING ARRAY ITEMS
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+    console.log(shapes.length); // 4
+
+a. use (var name).LENGTH to find out how many STRINGS in an array
+
+4.
+ACCESSING ARRAY ELEMENTS
+    array    [ 1, 2, 3, 4 ]
+               ^  ^  ^  ^
+               |  |  |  |
+    indices    0  1  2  3
+
+a. ARRAYS are zero-indexed; first slot is 0
+
+    var numbers = [1, 2, 3, 4];
+    console.log(numbers[0]); // 1
+    console.log(numbers[1]); // 2
+    console.log(numbers[2]); // 3
+    console.log(numbers[3]); // 4
+
+b. ARRAY elements are accessed by a [] with the index of the
+    element you want to access
+
+EXAMPLE
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+    console.log('There are ' + shapes.length + ' shapes in the array');
+
+    console.log('The first shape is: ' + shapes[0]);
+    // The first shape is: square
+
+    console.log('The second shape is: ' + shapes[1]);
+    // The second shape is: rectangle
+
+    console.log('The third shape is: ' + shapes[2]);
+    // The third shape is: circle
+
+    console.log('The fourth shape is: ' + shapes[3]);
+    // The fourth shape is: triangle
+
+    console.log('The fifth shape is: ' + shapes[4]);
+    // The fifth shape is: undefined
+
+a. accessing an ARRAY that does not exist, we get a value of
+    UNDEFINED
+
+5.
+ITERATING ARRAYS
++FOR LOOP
+    a. iterate means repeat the process
+
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+    // loop through the array and log the values
+    for (var i = 0; i < shapes.length; i++) {
+        console.log('The shape at index ' + i + ' is: ' + shapes[i]);
+    }
+
+b. FOR loop starts at zero (i = 0)
+c. ends at the LENGTH of the ARRAY -1 (index of the last element
+
+6.
+FOR-EACH LOOP
+    someArray.forEach(function(element, index, array) {
+        // ...
+    })
+
+a. .forEach can be used as an alternative FOR loop
+b. .forEach takes another function as a parameter and
+    doesn't have a return value
+c. .forEach takes in 3 parameters
+    -array element
+    -corresponding index
+    -array itself
+d. function passed to .forEach is a callback function
+
+EXAMPLE
+    var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+    // loop through the array and log the values
+    shapes.forEach(function(shape) {
+        console.log('Here is a lovely shape: ' + shape + '.');
+    });
+
+a. we can omit parameters we don't intend to use
+
+
+
+
