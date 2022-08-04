@@ -33,9 +33,20 @@ console.log("Planets and Strings\!");
     //console.log(planetsString = planetsArray.join("<br>"));
      console.log(planetsString.replaceAll("|", "<br>"));
 
-     planetsArray.push("</ul");
-     planetsArray.unshift("<ul>");
-     var planetsList = planetsArray.join("<li>");
-     console.log(planetsList);
+     //BONUS
+     //planetsArray.push("<ul");
+     //planetsArray.unshift("</ul>");
+     //var planetsList = planetsArray.join("<li>");
+     //console.log(planetsList);
+
+    var newArr = [];
+    planetsArray.forEach(function (planet){
+        newArr.push(`<li>${planet}</li>`)
+    })
+    newArr.push("</ul>");
+    newArr.unshift("<ul>")
+    newArr = newArr.join(" ");
+    console.log(newArr)
+
 
 })();
