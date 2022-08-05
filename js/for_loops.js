@@ -28,20 +28,26 @@ console.log("Hello Loops!");
 //    console.log("This is not 50")
 //}
 
+//function boolToString(flag){
+//    return `${flag}`;
+//}
+
+//console.log(boolToString("flag"));
+
 //------------------------------------------------------------------------------
 
-//EXERCISE 1
+//EXERCISE 2
 
 function showMultiplicationTable(number) {
     for(var i = 1; i <= 10; i++)
         console.log(number + " * " + (i) + " = " + (number * i));
-    }
+}
 
 console.log(showMultiplicationTable(7));
 console.log(showMultiplicationTable(11));
 console.log(showMultiplicationTable(10));
 
-//EXERCISE 2
+//EXERCISE 3
 
 console.log("Generate 10 random numbers");
 
@@ -54,9 +60,18 @@ for(var i = 0; i <= 10; i++) {
     }
 }
 
+//EXERCISE 4
 
-function boolToString(flag){
-    return `${flag}`;
+for(var i = 1; i <= 9; i++){
+    console.log(i.toString().repeat(i));
 }
 
-console.log(boolToString("flag"));
+//EXERCISE 5
+
+var reverse;
+for(reverse = 100; reverse <= 100; reverse -= 5) {
+    console.log(reverse);
+    if(reverse == 5) {
+        break;
+    }
+}

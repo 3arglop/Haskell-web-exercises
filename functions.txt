@@ -4,8 +4,8 @@ EXAMPLES
 
 1.
 PASSING ARGUMENTS
-    someFunction(); // call the function someFunction() - no argument
-    parseInt("42"); // call the parseInt function with an argument of "42"
+    someFunction(); // call the function someFunction() - no parameter
+    parseInt("42"); // call the parseInt function with a parameter of "42"
 
 2.
 FUNCTION PRODUCES OUTPUT, OUTPUT CAN BECOME A VARIABLE OR PASS AS
@@ -18,9 +18,9 @@ ANOTHER FUNCTION
     var myNumber = parseInt(myString);
 
 a. this calls for the parseInt function stated above
-b. a new variable named myString takes in the argument of the function parseInt
+b. a variable named myString takes in the parameter of "42"
 c. a new variable is made named myNumber that takes in the value of myString
-    and creates a new parseInt value by stating myString as the argument
+    and creates a new parseInt value by stating myString as the parameter
 
 4.
 PARENTHESIS
@@ -30,7 +30,7 @@ PARENTHESIS
 
 a. the parenthesis after the function name is what tells JS
     we wish to run
-b. without it, its just another variable with no code inside
+b. without it, its just another variable with no parameter/value inside
 
 5.
 DEFINING FUNCTIONS
@@ -87,7 +87,7 @@ c. you can use this to decrease space used to code
 9.
 ARGUMENTS/PARAMETERS
     function sum(a, b) {
-        var result = a + b; // technically the `result` variable is not necessary
+        var result = a + b; // technically, the `result` variable is not necessary
         return result;      // instead we could just return a + b directly
     }
 
