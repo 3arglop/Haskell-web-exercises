@@ -108,7 +108,25 @@ console.log(analyzeColor(randomColor));
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-
+function analyzeColor(color) {
+    switch(color) {
+        case "red":
+            return "stop sign";
+        case "blue":
+            return "sea";
+        case "orange":
+            return "home depot";
+        case "yellow":
+            return "the sun";
+        case "green":
+            return "the forest";
+        case "indigo":
+            return "plums";
+        case "violet":
+            return "barney";
+        default:
+            return "nice color";
+}
 
 
 /**
@@ -201,4 +219,4 @@ if(yourNumber < 0) {
     alert("That's a negative nunber ${yourNumber}")
 } else if(yourNumber > 0) {
     alert("That's a positive ${yourNumber)");
-}
+}}
