@@ -1,0 +1,27 @@
+OBJECTS
+
+1.
+CUSTOM OBJECTS
+a. PROTOTYPES allow existing objects to be used as templates to create new objects
+
+
+    "use strict";
+
+    var car = new Object();
+
+    console.log(typeof car);
+    // "object"
+
+b. custom object is car
+c. newObject() calls OBJECT to build a new OBJECT
+
+2.
+OBJECT LITERAL NOTATION
+    "use strict";
+
+    var car = {};
+
+    console.log(typeof car);
+    // "object"
+
+a.
