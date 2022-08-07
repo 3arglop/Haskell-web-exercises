@@ -8,11 +8,16 @@ console.log("Ready for Arrays\?");
      * 'names'.
      */
 
+    var names = ['kyle', 'estefania', 'tammy', 'rue'];
+    console.log(names);
+
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
+
+    console.log(names.length);
 
     /**
      * TODO:
@@ -20,16 +25,29 @@ console.log("Ready for Arrays\?");
      * accessing each element's index.
      */
 
+    console.log(names[0]); // kyle
+    console.log(names[1]); // estefania
+    console.log(names[2]); // tammy
+    console.log(names[3]); // rue
+
+
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
 
+    for(var i = 0; i < names.length; i++) {
+        console.log("Hello " + names[i] + "! Welcome home.");
+    }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+
+    names.forEach(function(names) {
+        console.log("Welcome: " + names);
+    });
 
     /**
      * TODO:
@@ -44,5 +62,14 @@ console.log("Ready for Arrays\?");
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    var first = [1, 2, 3, 4, 5];
+    var second = [1, 2, 3, 4, 5];
+    var last = [1, 2, 3, 4, 5];
+
+   console.log(first[0]);
+   console.log(second[1]);
+   console.log(last[4]);
+
 
 })();
