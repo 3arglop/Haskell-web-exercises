@@ -32,8 +32,9 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-//var nameFirst;
-//var nameLast;
+
+    //var nameFirst;
+    //var nameLast;
     //nameFirst = prompt("What is your first name?");
     //console.log(nameFirst);
     //nameLast = prompt("What is your last name?");
@@ -189,8 +190,6 @@
         console.log('Author: ' + book.author.firstName + " " + book.author.lastName);
         console.log("---");
     });
-
-
 
     /**
      * Bonus:
