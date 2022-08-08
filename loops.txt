@@ -140,3 +140,6 @@ a. CONTINUE keyword allows you to skip to the next loop
 b. in this example, CONTINUE is being used to skip the odd numbers
     since (i) is only looking for even numbers (i % 2)
 c. CONTINUE also works in a WHILE loop
+d. Skips the rest of the current iteration and keeps
+    going through the loop if the conditional returns true
+
