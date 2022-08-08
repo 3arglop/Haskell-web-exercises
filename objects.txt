@@ -1,4 +1,7 @@
 OBJECTS
+a. grouping of data and functionality
+b. data items = PROPERTIES
+c. functions on an object = METHODS
 
 1.
 CUSTOM OBJECTS
@@ -24,4 +27,98 @@ OBJECT LITERAL NOTATION
     console.log(typeof car);
     // "object"
 
-a.
+a. instead of using (new Object();) you could just use curly braces {} to state
+    the start of an object
+
+3.
+SETTING PROPERTIES ON A CUSTOM OBJECT
+a. once an OBJECT is created, we can assign PROPERTIES
+b. PROPERTIES are assigned by dot notation or array notation
+
+    "use strict";
+
+    var car = {};
+
+    // use dot notation to assign a "make" property
+    car.make = "Toyota";
+
+    // use array notation to assign a "model" property
+    car["model"] = "Camry";
+
+c. dot notation is used by default
+d. ONLY USE array notation if:
+    - name of property is NOT valid identifier
+    - you don't know the name of the property UNTIL run-time
+
+SYNTAX EXAMPLE #1
+    var car = {
+        make: "Toyota",
+        model: "Camry"
+    };
+
+SYNTAX EXAMPLE #2
+    // DONT DO THIS
+    var car = {
+        "number of wheels": 4
+    };
+
+    // do this instead
+    var car = {
+        numberOfWheels: 4
+    };
+
+SYNTAX EXAMPLE #3
+    // DONT DO THIS
+    car["number of wheels"] = 4;
+
+    // do this instead
+    car.numberOfWheels = 4;
+
+4.
+ACCESSING PROPERTIES ON AN OBJECT
+    "use strict";
+
+    var car = {};
+    car.make = "Toyota";
+    car.model = "Camry";
+
+    // use array notation to access "make" property
+    console.log("The car make is: " + car["make"]);
+
+    // use dot notation to access "model" property
+    console.log("The car model is: " + car.model);
+
+a. we can access OBJECT PROPERTIES same way they are set
+
+5.
+NESTED VALUES
+    var cars = [
+        {
+            make: "Toyota",
+            model: "Camry",
+            features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
+            owner: {
+                name: "Jane Doe",
+                age: 30
+            }
+        },
+        {
+            make: "Honda",
+            model: "Accord",
+            features: ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"],
+            owner: {
+                name: "John Doe",
+                age: 31
+            }
+        }
+    ];
+
+    console.log("The first car is a " + cars[0].make + " " + cars[0].model + ".");
+    console.log("The owner of the second car is " + cars[1].owner.name + ".");
+
+    console.log("Here are all the features of all the cars:");
+    cars.forEach(function(car) {
+        car.features.forEach(function(feature) {
+            console.log(feature);
+        });
+    });
