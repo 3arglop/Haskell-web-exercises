@@ -32,6 +32,26 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+//var nameFirst;
+//var nameLast;
+    //nameFirst = prompt("What is your first name?");
+    //console.log(nameFirst);
+    //nameLast = prompt("What is your last name?");
+    //console.log(nameLast);
+
+    //var user = {
+        //nameFirst,
+        //nameLast
+    //};
+
+    //alert("Welcome " + user.nameFirst + " " + user.nameLast + "!");
+    //console.log(user);
+
+    person.sayHello = function() {
+        return 'Hello from ' + person.firstName + " " + person.lastName + "!";
+    }
+
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -47,11 +67,36 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+        //HEB OFFER TO THOSE WHO SPEND $200+
+        //X > $200 = 12% OFF
+        //CAMERON = $180
+        //RYAN $250
+        //GEORGE $320
+        //AMOUNT BEFORE DISCOUNT, THE DISCOUNT, AMOUNT AFTER DISCOUNT
+        //USE FOREACH
+        //CONDITIONALS: IF AMOUNT IS > 200, APPLY DISCOUNT AND SHOW ELSE
+        // IF AMOUNT IS < 200, DONT APPLY DISCOUNT
+        //RETURN ALERT("No discount to be found")
+        //DISPLAY CURRENT AND NEW TOTAL
+
+    var shoppers = [
+         {name: 'Cameron', amount: 180},
+         {name: 'Ryan', amount: 250},
+         {name: 'George', amount: 320}
+     ];
+
+    shoppers.forEach(function(shopper) {
+        console.log("Hello " + shopper.name + "." + " Your total is: $" + shopper.amount)
+        if(shopper.amount > 200) {
+           var discount = shopper.amount * 0.12;
+            console.log("Your discount is: $" + discount);
+            var newTotal = shopper.amount - discount;
+            console.log("Your new total is: $" + newTotal)
+        } else if(shopper.amount < 200) {
+            console.log("Discount cannot be applied!");
+        }
+        return shopper.amount;
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -65,6 +110,53 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "twilight",
+            author: {
+                firstName: "stephenie",
+                lastName: "meyer"
+            }
+        },
+        {
+            title: "berserk",
+            author: {
+                firstName: "kentaru",
+                lastName: "miura"
+            }
+        },
+        {
+            title: "50 shades of grey",
+            author: {
+                firstName: "e.l.",
+                lastName: "james"
+            }
+        },
+        {
+            title: "cat in the hat",
+            author: {
+                firstName: "dr.",
+                lastName: "suess"
+            }
+        },
+        {
+            title: "the hunger games",
+            author: {
+                firstName: "suzanne",
+                lastName: "collins"
+            }
+        }
+    ];
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+
+    console.log(books[4].title);
+    console.log(books[4].author.firstName);
+    console.log(books[4].author.lastName);
+
 
     /**
      * TODO:
@@ -91,6 +183,15 @@
      *      ...
      */
 
+    books.forEach(function(book, index) {
+        console.log('Book # ' + (index + 1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    });
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -101,5 +202,24 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    var libros = [];
+
+    function createBook(title, author) {
+        var libro = {
+            title: title,
+            author: author
+        }
+        libros.push(libro);
+        return libro;
+    };
+
+    console.log(libros);
+    console.log(createBook("first book", "first author"));
+    console.log(libros);
+    console.log(createBook("second book", "second author"));
+    console.log(libros);
+    console.log(createBook("third book", "third author"));
+    console.log(libros);
 
 })();
