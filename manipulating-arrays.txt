@@ -1,0 +1,136 @@
+MANIPULATING ARRAYS
+
+1.
+ADDING ELEMENTS
+a. (.PUSH) adds an item to the END of the array
+b. (.UNSHIFT) adds an item to the BEGINNING of the array
+
+    daysOfTheWeek.unshift('Sunday'); // let's add 'Sunday' to the beginning of the week
+
+    daysOfTheWeek.push('Friday', 'Saturday'); // let's add 'Friday' and 'Saturday' to the end of the week
+
+c. both PUSH and UNSHIFT will modify the original array,
+    and return a number, the new length of the array, not the new array
+
+2.
+REMOVING ELEMENTS
+a. (.POP) removes the LAST item in the array
+b. (.SHIFT) removes the FIRST item in the array
+
+    var removedItem = todoList.pop(); // let's remove the last item
+    console.log('Task complete: ' + removedItem); // log what we did
+
+    var doneItem = todoList.shift(); // let's remove the first item
+    console.log('Task complete: ' + doneItem); // log what we did
+
+3.
+LOCATING ARRAY ELEMENTS
+a. (.indexOf) starts searching from the BEGINNING of the array
+b. (.lastIndexOf) starts at the END of the array and works BACKWARDS
+
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'];
+                    0       1          2        3       4        5          6       7
+    var index = colors.indexOf('green');
+    console.log(index);
+    // 3
+
+    index = colors.indexOf('red');
+    console.log(index);
+    // 0
+
+    index = colors.lastIndexOf('red');
+    console.log(index);
+    // 7
+
+c. before manipulating an array, its helpful to locate the index of a
+    particular item
+
+4.
+SLICING
+a. (.SLICE) allows us to COPY a portion of an array
+
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    var slice = colors.slice(2, 4);
+
+    console.log(colors); // colors is unchanged
+    // ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+    console.log(slice); // ['yellow', 'green']
+
+    slice = colors.slice(3);
+    console.log(slice); // ['green', 'blue', 'indigo', 'violet']
+
+b. optionally, you can take one or two arguments to define where you
+    want to start and stop
+c. will NOT modify the original array, will RETURN a new array
+d. for two or more arguments: the second argument is the index to stop at
+    the new array will have the elememts up to the but not including the
+    stop index
+
+5.
+REVERSING
+a. (.REVERSE) array can be REVERSED
+
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+    console.log(colors);
+    // ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+    console.log('Reversing the colors array.');
+
+    colors.reverse();
+
+    console.log(colors);
+    // ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+
+b. the .REVERSE will reverse original and return new array, reversed
+
+6.
+SORTING
+a. (.SORT) array can be SORTED
+
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+    console.log(colors);
+    // ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+    console.log('Sorting the colors array.');
+
+    colors.sort();
+
+    console.log(colors);
+    // ['blue', 'green', 'indigo', 'orange', 'red', 'violet', 'yellow']
+
+b. by default, will convert items in the array to the str equivalent and order
+    them based on the value; by ALPHABETICAL order
+c. just like .REVERSE, will modify original and return new array, sorted
+
+7.
+CONVERTING BETWEEN STRINGS AND ARRAYS
++SPLITTING
+a. (.SPLIT) takes string and turns into an array
+b. uses delimiter to decide where to split
+
+    var namesString = "Joe,Bob,Sally";
+
+    console.log(namesString);
+    // Joe,Bob,Sally
+
+    var namesArray = namesString.split(',');
+
+    console.log(namesArray);
+
+8.
+CONVERTING BETWEEN STRINGS AND ARRAYS
++JOINING
+a. (.JOIN) takes an array and converts to a string with delimiter of choice
+
+    var namesArray = ['Joe', 'Bob', 'Sally'];
+
+    console.log(namesArray);
+    // ['Joe', 'Bob', 'Sally']
+
+    var namesString = namesArray.join(',');
+
+    console.log(namesString);
+    // Joe,Bob,Sally
