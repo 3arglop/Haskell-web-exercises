@@ -122,3 +122,43 @@ NESTED VALUES
             console.log(feature);
         });
     });
+
+a. adding values to properties
+b. objects with many nested values are extremely common
+
+6.
+ASSIGNING FUNCTIONALITY TO AN OBJECT
+    "use strict";
+
+    var car = {};
+    car.make = "Toyota";
+    car.model = "Camry";
+
+    // create a honk method on the car object
+    car.honk = function () {
+        alert("Honk! Honk!");
+    };
+
+    // honk the horn
+    car.honk();
+
+a. an object can also have functions aka OBJECT METHODS
+
+7.
+THE this KEYWORD
+a. THIS keyword can refer to a different object based on how a
+    function is called
+
+    "use strict";
+
+    var car = {};
+    car.make = "Toyota";
+    car.model = "Camry";
+
+    // create a logMakeModel method on the car object
+    car.logMakeModel = function () {
+        console.log("Car make/model is: " + this.make + " " + this.model);
+    };
+
+    // log the make/model
+    car.logMakeModel();
