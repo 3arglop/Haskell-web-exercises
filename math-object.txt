@@ -1,0 +1,70 @@
+MATH OBJECT
+a. Math objects: all of its properties and methods are STATIC
+
+1.
+Math.random()
+a. the Math.random() function returns a floating-point, pseudo-random number
+    in the range [0, 1] that is, from 0 (inclusive) up to but not including
+    1 (exclusive), which you can then scale to your desired range
+
+    // Returns a random integer between min and max.
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+2.
+Math.round()
+a. The Math.round() function returns the value of a
+    number rounded to the nearest integer
+
+    Math.round(20.49);  // 20
+    Math.round(20.5);   // 21
+    Math.round(-20.5);  // -20
+    Math.round(-20.51); // -21
+
+3.
+Math.floor()
+a. the Math.floor() function returns the largest integer less
+    than or equal to a number
+
+    Math.floor( 45.95); //  45
+    Math.floor(-45.95); // -46
+
+4.
+Math.ceil()
+a. the Math.ceil() function returns the smallest
+    integer greater than or equal to a number
+
+    Math.ceil(.95);   // 1
+    Math.ceil(4);     // 4
+    Math.ceil(7.004); // 8
+
+5.
+Math.pow()
+a. the Math.pow() function returns the base to the exponent power,
+    that is, base^exponent
+
+    // 2 raised to the 16 power
+    Math.pow(2, 16); // 65536
+
+6.
+Math.sqrt()
+a. the Math.sqrt() function returns the square root of a number
+
+    Math.sqrt(9);  // 3
+    Math.sqrt(2);  // 1.414213562373095
+    Math.sqrt(1);  // 1
+    Math.sqrt(0);  // 0
+    Math.sqrt(-1); // NaN
+
+7.
+CONSTANTS
++Math.E
+a. the Math.E property represents the base of natural logarithms,
+    e, approximately 2.718
+
+8.
+CONSTANTS
++Math.PI
+a. the Math.PI property represents the ratio of the circumference of a
+    circle to its diameter, approximately 3.14159
