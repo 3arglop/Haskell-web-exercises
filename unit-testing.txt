@@ -1,0 +1,19 @@
+UNIT TEST
+a. tests a "unit of work"
+
+EXAMPLE
+unit of work:
+    1. var getCarLemonTree(object) {
+    //BODY
+    return;
+    }
+
+unit test:
+a. acceptance criteria
+    - given a valid car object, return mileage
+    - " ", returns oil life
+    - " ", returns car details
+b. all of this information will give me a function to test
+
+HOW TO:
+1. create two JS files
