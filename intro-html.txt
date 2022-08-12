@@ -24,5 +24,63 @@ c. for HTML, the root element is <html>
 
 3.
 HEAD AND BODY
-a. within ROOT and DOCUMENT,
+a. within ROOT and DOCUMENT
+b.<head> tells W.B. info about the web page
+c.<body> defines the content the W.B. will display to user
 
+    <!DOCTYPE html>
+    <html>
+        <head>
+            // info for web browser goes here
+        </head>
+        <body>
+            // actual page content goes here
+        </body>
+    </html>
+
+4.
+PAGE TITLE
+a. provides title to the W.B.
+b. seen in the title bar or in the name of bookmarks
+
+     <!DOCTYPE html>
+     <html>
+         <head>
+             <title>My First Web Page</title>
+         </head>
+         <body>
+             // actual page content goes here
+         </body>
+     </html>
+
+5.
+METADATA
+a. extended information
+b. could be used for:
+    - search keywords
+    - page description
+    - page author
+    - page character set
+c. no close tag needed
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>My First Web Page</title>
+        </head>
+        <body>
+            // actual page content goes here
+        </body>
+    </html>
+
+6.
+COMMENTS
+    <!-- comment goes here -->
+
+    <!--
+    multi
+    line
+    comment
+    here
+    -->
