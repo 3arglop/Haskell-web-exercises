@@ -74,7 +74,7 @@ NESTING ELEMENTS
 a. NESTING combines elements
 
 9.
-    LISTS
+LISTS
     <ul>
         <li>This list</li>
         <li>is bulleted</li>
@@ -83,3 +83,92 @@ a. NESTING combines elements
         <li>This list</li>
         <li>is numbered</li>
     </ol>
+
+a. block level element
+b. two types: (ol) NUMBERED (ul) BULLETED
+c. (li) LIST ITEMS
+
+10.
+ANCHORS
+    <h1 id="top">Top of the page</h1>
+    ...
+    <a href="http://google.com">Go to Google!</a>
+    <a href="http://google.com">Visit google in a new tab / window.</a>
+    <a href="#top">Go to the top of the page</a> // example for f.
+
+a. inline element
+b. hyperlinks to other pages/location within current page
+c. contents will follow link
+d. (href) location to navigate to
+e. (target) specify how a link is opened
+f. individual elements can be linked with an (id) element preceded by a #
+
+11.
+IMAGES
+    <img src="img/example.png" alt="Example Image">
+    <img src="https://www.google.com/images/srpr/logo1w.png" alt="Hotlinked Google Logo">
+
+a. inline/void element
+b. displays an image
+c. (SRC) attribute specifies URL
+d. (ALT) attribute specifies text
+e. HOTLINKING: using an image on an external domain; AVOID AT ALL COSTS
+
+12.
+TABLES
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Iced Tea</td>
+            <td>$2.99</td>
+        </tr>
+        <tr>
+            <td>Hamburger and French Fries</td>
+            <td>$11.99</td>
+        </tr>
+    </table>
+
+a. used to display tabular data (NOT layout)
+b. consist of table rows (TR) element
+c. (TH) heading
+d. (TD) elements
+e. (TH) cells
+
+13.
+HTML FOR PAGE LAYOUTS
+a. process of placing and arranging text, images, and graphics
+b. types of semantic elements in HTML5
+    <HEADER>. defines a header for a document or a section
+    <NAV>. defines a container for navigation links
+    <MAIN>. the main content area consists of content that is directly related to the central topic of a document
+    <ARTICLE>. defines an independent self-contained article
+    <SECTION>. defines a section in a document
+    <ASIDE>. defines content aside from the content (like a sidebar)
+    <FOOTER>. defines a footer for a document or a section
+
+SYNTAX EXAMPLE
+    <body>
+        <header>
+            Generally an image of the product/logo with a call to action, like subscribing or signing up.
+        </header>
+        <nav>
+            Usually an unordered list with links to the main pages of the site or application
+        </nav>
+        <main>
+            <section class="pricing-plans">
+                Sometimes a description of the pricing plans for the product
+            </section>
+            <article>
+                The description of the product/service/application
+            </article>
+        </main>
+        <aside>
+            A secondary navigation element or ads are common in this place
+        </aside>
+        <footer>
+            Secondary links and copyright notices
+        </footer>
+    </body>
