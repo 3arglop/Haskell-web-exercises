@@ -1,0 +1,85 @@
+HTML ELEMENTS
+a. ELEMENTS describe the data in a web doc
+b. give meaning and context to info being displayed
+c. in between opening and closing tags, CONTENTS such as text or
+    additional HTML ELEMENTS can be added
+d. PARENT elements nest the CHILD elements; one element containing other elements
+
+1.
+BLOCK-LEVEL AND INLINE ELEMENTS
+a. BLOCK-LEVEL occupies the entire space of its parent element
+b. also begins on new lines
+c. example:
+    <div>
+        content
+    </div>
+d. INLINE occupies only the space bounded by the tags that define the element
+c. only contains data and other INLINE elements
+e. example:
+    <p>Look, we have an amazing <span>inline</span> element.</p>
+
+2.
+VOID ELEMENTS
+a. they do NOT contain any content
+b. no closing tag needed
+        <br>
+        <input type="text" name="username" /> // void elements can end with a /, but it is not required
+
+3.
+ATTRIBUTES
+a. specified inside the opening tag
+b. consists of a name, (=) sign, and value inside the double quotes
+c. multiple attributes are seperated by spaces
+    <div id="wrapper">
+        content
+    </div>
+d. in this example, (id) is the attribute with a value
+
+4.
+HEADINGS
+    <h1>I am the main heading for the page.</h1>
+    <h2>I am another heading, but less important</h2>
+    <h6>I am the least important .heading.</h6>
+
+a. block level element
+b. 6 levels ONLY
+
+5.
+PARAGRAPHS
+      <p>This is a paragraph.</p>
+
+a. block level element
+
+6.
+LINE BREAKS AND HORIZONTAL RULES
+    <br>
+    <hr>
+
+a. block level, void element
+b. create a line break in doc, HR with a horizontal line
+
+7.
+STRONG AND EMPHASIS
+    <p>Understanding HTML is <em>really</em> <strong>important</strong>!</p>
+
+a. inline element
+b. draws attention, indicate importance of content
+c. STRONG = bolded
+d. EM = italicized
+
+8.
+NESTING ELEMENTS
+    <p>Understanding HTML is <em><strong>really important</strong></em>!</p>
+
+a. NESTING combines elements
+
+9.
+    LISTS
+    <ul>
+        <li>This list</li>
+        <li>is bulleted</li>
+    </ul>
+    <ol>
+        <li>This list</li>
+        <li>is numbered</li>
+    </ol>
