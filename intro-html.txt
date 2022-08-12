@@ -1,0 +1,28 @@
+INTRO TO HTML
+a.HTML: hypertext markup language, language of the web
+b. HYPERTEXT: text is displayed that can be linked to other text which
+    is accessible to the user
+c. MARKUP LANGUAGE: defined annotations that gets added to text that futher
+    explains the text
+
+1.
+DOCTYPE DECLARATION
+a. first line in HTML document
+b. needed to help the browser identify data
+
+    <!DOCTYPE html>
+
+2.
+ROOT ELEMENT
+a. element-based markup languages, it is the 1st element on the page
+b. element that contains all other elements
+c. for HTML, the root element is <html>
+
+    <!DOCTYPE html>
+    <html>
+    </html>
+
+3.
+HEAD AND BODY
+a. within ROOT and DOCUMENT,
+
