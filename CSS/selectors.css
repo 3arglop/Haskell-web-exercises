@@ -1,0 +1,56 @@
+/* selector for id="container" */
+#container {
+    margin: 50px auto;
+    width: 500px;
+    padding: 0px;
+}
+.background {
+    background-image: url("https://images.unsplash.com/photo-1573767291321-c0af2eaf5266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnV0dXJpc3RpY3xlbnwwfHwwfHw%3D&w=1000&q=80");
+}
+/*  selector for all "h1" elements
+    that are a descendent of id="container"
+    and have a class of "fancy-header" */
+.title {
+    color: #FE1FA6;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Arial Rounded MT Bold";
+}
+.fancy-header {
+    color: #A5D8F3;
+    text-decoration: underline;
+    font-size: 20px;
+    font-family: "Helvetica Neue";
+}
+
+/* selector for all "em" elements */
+.emphasis {
+    color: #7CFF01;
+}
+
+.paragraph {
+    color: white;
+    font-family: Courier;
+}
+
+.more {
+    color: #FFEC59;
+    font-family: "Arial Rounded MT Bold";
+    font-size: 12px;
+}
+.citation {
+    color: white;
+    font-family: Arial;
+    margin: 0;
+    font-size: 10px;
+}
+/* selector for all elements with class="article" */
+selector-todo {
+    clear:both;
+}
+
+/*  selector for all "anchor" elements
+    that are a direct child of an element with class="article" */
+selector-todo {
+    float:right;
+}
