@@ -77,24 +77,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 function analyzeColor(colors) {
     if(colors === 'red') {
-        alert("Red for apples!")
+        return "Red for apples!";
     } else if(colors === 'orange') {
-        alert("Orange for papaya!")
+        return "Orange for papaya!";
     } else if(colors === 'yellow') {
-        alert("Yellow for bananas!")
+        return "Yellow for bananas!";
     } else if(colors === 'green') {
-        alert("Green for spinach!")
+        return "Green for spinach!";
     } else if(colors === 'blue') {
-        alert("Blue for blueberries!")
+        return "Blue for blueberries!";
     } else if(colors === 'indigo') {
-        alert("Indigo like a plum!")
+        return "Indigo like a plum!";
     } else if(colors === 'violet') {
-        alert("Violet like...")
+        return "Violet like...";
     } else {
-        alert("I don't have a comparison for this color!")
+        return "I don't have a comparison for this color!";
     }
 }
 
+console.log(analyzeColor('red'));
+console.log(analyzeColor('yellow'));
+console.log(analyzeColor('violet'));
+console.log(analyzeColor('pink'));
 
 /**
  * TODO:
@@ -108,8 +112,8 @@ console.log(analyzeColor(randomColor));
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor(color) {
-    switch(color) {
+function pallet(colors) {
+    switch (colors) {
         case "red":
             return "stop sign";
         case "blue":
@@ -126,8 +130,12 @@ function analyzeColor(color) {
             return "barney";
         default:
             return "nice color";
+    }
 }
 
+    console.log(pallet("red"));
+    console.log(pallet("orange"));
+    console.log(pallet("pink"));
 
 /**
  * TODO:
@@ -172,6 +180,10 @@ function calculateTotal(lucky, total) {
     }
 }
 
+    console.log(calculateTotal(0, 100));
+    console.log(calculateTotal(4, 60));
+    console.log(calculateTotal(5, 250));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -181,9 +193,11 @@ function calculateTotal(lucky, total) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
- var luckyNumber = Math.floor(Math.random() * 6);
 
-
+var luckyNumber = Math.floor(Math.random() * 6);
+var total = prompt("What is your total?");
+alert("Your lucky number is: " + luckyNumber);
+console.log(calculateTotal(luckyNumber, total));
 
 /**
  * TODO:
@@ -204,19 +218,26 @@ function calculateTotal(lucky, total) {
  * HINT: The way we prompt for a value could be improved
  */
 
-var isTrue = confirm("What is your number\?");
-if(isTrue) {
-    var yourNumber = prompt("Nice number");
+var input = confirm("Would you like to enter a number?");
+    if(input === false) {
+        alert("Okie Dokie");
+    } else if(input === true) {
+        var askingNum = prompt("Enter a number:");
+    }
 
-    if(yourNumber % 2 === 0) {
-        alet("That number is even\!");
-    } else if(yourNumber % 2 !== 0) {
-        alert("That number is odd\!");
-}}
-var newNum = yourNumber + 100;
-alert('${yourNumber} + 100 = ${newNum)')
-if(yourNumber < 0) {
-    alert("That's a negative nunber ${yourNumber}")
-} else if(yourNumber > 0) {
-    alert("That's a positive ${yourNumber)");
-}}
+    if(askingNum % 2 == 0) {
+        alert("Your number is EVEN!");
+    } else if(askingNum % 2 !== 0) {
+        alert("Your number is ODD!");
+    }
+
+    var newNum = (Number(askingNum) + 100);
+    alert("Your number " + askingNum + " plus 100 = " + newNum);
+
+    if(askingNum > 0) {
+        alert("Your number is POSITIVE!");
+    } else if(askingNum < 0) {
+        alert("Your number is NEGATIVE!");
+    }
+
+//
