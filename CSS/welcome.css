@@ -1,0 +1,74 @@
+.background {
+    background: black;
+}
+.title {
+    font-family: Futura;
+    text-align: center;
+    color:violet;
+    -webkit-text-stroke-color: darkred;
+    -webkit-text-stroke-width: 3.00px;
+    font-size: 50px;
+}
+.subTitle {
+    font-family: Rockwell;
+    text-align: center;
+    color: pink;
+    -webkit-text-stroke-color: darkorange;
+    -webkit-text-stroke-width: .80px;
+    font-size: 20px;
+}
+.title2 {
+    color: lawngreen;
+    font-family: Rockwell;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    -webkit-text-stroke-color: darkgreen;
+    -webkit-text-stroke-width: 1.5px;
+}
+.list {
+    color: violet;
+    -webkit-text-stroke-color: darkviolet;
+    -webkit-text-stroke-width: .75px;
+    font-family: Courier;
+    font-size: 20px;
+}
+* {
+    box-sizing: border-box;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 250px;
+}
+row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.header {
+    font-family: Rockwell;
+    text-align: center;
+    color: deepskyblue;
+    -webkit-text-stroke-color: midnightblue;
+    -webkit-text-stroke-width: 1.5px;
+    font-size: 30px;
+    text-align: center;
+}
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+.container .img {
+    max-width: 500px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    margin: auto;
+}
+.pic {
+    width: 100%;
+    height: 100%;
+}
