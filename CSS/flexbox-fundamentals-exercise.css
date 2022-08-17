@@ -79,6 +79,7 @@ section:nth-of-type(1) {
     /* enter needed declarations here */
     align-content: flex-start;
     justify-content: space-between;
+    align-items: center;
 }
 #orange>h3 {
     /* enter needed declarations here */
