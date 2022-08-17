@@ -1,5 +1,6 @@
 .background {
     background: black;
+    margin: 15px;
 }
 .title {
     font-family: Futura;
@@ -8,6 +9,7 @@
     -webkit-text-stroke-color: darkred;
     -webkit-text-stroke-width: 3.00px;
     font-size: 50px;
+    margin: 0;
 }
 .subTitle {
     font-family: Rockwell;
@@ -16,6 +18,7 @@
     -webkit-text-stroke-color: darkorange;
     -webkit-text-stroke-width: .80px;
     font-size: 20px;
+    margin: 10px;
 }
 .title2 {
     color: lawngreen;
@@ -25,6 +28,8 @@
     text-align: left;
     -webkit-text-stroke-color: darkgreen;
     -webkit-text-stroke-width: 1.5px;
+    margin: 15px;
+    width: 33.33%;
 }
 .list {
     color: violet;
@@ -32,6 +37,7 @@
     -webkit-text-stroke-width: .75px;
     font-family: Courier;
     font-size: 20px;
+    padding: 0;
 }
 * {
     box-sizing: border-box;
