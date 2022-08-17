@@ -103,7 +103,7 @@ a {
 .media {
     width: 100%;
     background-color: white;
-    border-bottom: 1px var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
     padding: .5em;
     overflow: auto;
 
@@ -115,6 +115,7 @@ a {
 }
 .media-body {
     width: calc(100% - 50px);
+    float: left;
 }
 .profile-items {
     padding: 0;
