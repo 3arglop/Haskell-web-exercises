@@ -37,7 +37,6 @@ h2, h3 {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
-    align-content: space-evenly;
 }
 section:nth-of-type(1) {
     height: 3em;
