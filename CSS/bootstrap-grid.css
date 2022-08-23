@@ -1,0 +1,121 @@
+ body {
+     margin: 1em;
+ }
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:
+            "header header header header"
+            "sidebar main main main"
+            "sidebar main main main";
+    grid-gap: 0.5rem;
+}
+
+
+#header {
+    grid-area: header;
+}
+h1 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    color: darkolivegreen;
+}
+h2 {
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+    color: dodgerblue;
+}
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+.col-sm-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ i.fa-solid.fa-phone {
+     padding-right: .5em;
+ }
+ i.fa-solid.fa-envelope {
+     padding-right: .5em;
+ }
+ i.fa-brands.fa-linkedin-in {
+     padding-right: .5em;
+ }
+ i.fa-brands.fa-github {
+     padding-right: .5em;
+ }
+ hr {
+     display: block;
+     margin-before: 0.5em;
+     margin-after: 0.5em;
+     margin-start: auto;
+     margin-end: auto;
+     overflow: hidden;
+     border-style: inset;
+     border-width: 5px;
+     color: lawngreen;
+ }
+
+
+
+
+main {
+    grid-area: main;
+}
+.main p {
+    text-align: left;
+    padding-left: .5rem;
+    margin-top: 1.5rem;
+}
+.main h6 {
+    margin-top: 1rem;
+}
+
+
+
+
+#sidebar {
+    grid-area: sidebar;
+}
+h4 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.2rem;
+    color: dodgerblue;
+    margin-top: 1em;
+}
+li {
+    font-family: 'Raleway', sans-serif;
+}
+h6 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    margin: .5em;
+}
+.skills p {
+    text-align: left;
+}
+
+
+
+
+@media only screen and (max-width: 550px) {
+    body {
+        margin: 1em;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.2fr 1.2fr 1.2fr;
+        grid-template-areas:
+                "header"
+                "sidebar"
+                "main";
+    }
+    .main {
+        display: none;
+    }
+}
