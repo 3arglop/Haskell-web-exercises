@@ -1,0 +1,35 @@
+body {
+    margin: .5em;
+    background-color: #F0F0F0;
+}
+.navbar a {
+    font-family: 'Abel', sans-serif;
+}
+.navbar-nav {
+    font-family: 'Abel', sans-serif;
+    font-size: .8em;
+}
+.fancy-header {
+    font-family: 'Anton', sans-serif;
+}
+.col.circle {
+    border-radius: 50%;
+    height: 105px;
+    width: 105px;
+    line-height: 90px;
+    font-family: 'Anton', sans-serif;
+    border: 6px solid white;
+}
+.circle1 {
+    background-color: #E6563B;
+}
+.circle2 {
+    background-color: #EB9D3A;
+}
+.circle3 {
+    background-color: #7CB06C;
+}
+.circle4 {
+    background-color: #00ABA9;
+}
+
