@@ -32,4 +32,19 @@ body {
 .circle4 {
     background-color: #00ABA9;
 }
+h6 {
+    font-family: 'Abel', sans-serif;
+    font-size: 1em;
+    padding: 2.5em;
+}
+.card-title {
+    font-family: 'Abel', sans-serif;
+    font-size: 1em;
+}
+.card-text {
+    font-family: 'Anton', sans-serif;
+}
+.text-muted {
+    padding-right: 1em;
+}
 
