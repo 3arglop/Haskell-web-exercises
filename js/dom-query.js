@@ -78,3 +78,12 @@ let click4 = document.getElementById("click4");
 click4.addEventListener("click", function (e) {
     document.getElementById("list1").style.color = "red";
 });
+
+//MORE BUTTONS TO MESS WITH COS WHY NOT?...
+
+let bodyColor = document.getElementById("bodyColor");
+
+bodyColor.addEventListener("click", function (e) {
+    // document.getElementsByTagName('body')[0].style['background-color'] = "pink";
+    document.getElementsByTagName('body')[0].style.backgroundColor = "pink";
+});
