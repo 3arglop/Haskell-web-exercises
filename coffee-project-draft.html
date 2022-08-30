@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Coffee.com</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="CSS/coffee-project-draft.css">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Prata&display=swap" rel="stylesheet">
+
+</head>
+<body class="bodyElement m-3">
+
+<!--HEADER-->
+<div class="fancy-header text-light text-center m-1">
+<h1>Coffee! Inc</h1>
+</div>
+<hr class="line">
+
+
+<!--START OF BODY AFTER HEADER-->
+<div class="container">
+    <div class="row">
+
+<!--ONE-->
+<div class="col-lg-6">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>ROAST</th>
+        </tr>
+        </thead>
+        <tbody id="coffees"></tbody>
+    </table>
+</div>
+
+
+
+<!--TWO-->
+<div class="col-lg-6">
+
+    <h6 class="roast1 text-light fs-3">Roast</h6>
+
+<form class="options d-flex flex-column justify-content-start">
+
+    <label for="roast-selection">
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option value="1">light</option>
+            <option value="2">medium</option>
+            <option value="3">dark</option>
+        </select>
+    </label>
+
+
+    <h6 class="roast1 text-light fs-3 pt-3">Coffee Name</h6>
+    <input id="submit" type="submit" />
+</form>
+</div>
+
+<!--END OF BODY AFTER HEADER-->
+</div>
+</div>
+
+<script src="JS/coffee-project-draft.js"></script>
+</body>
+</html>
