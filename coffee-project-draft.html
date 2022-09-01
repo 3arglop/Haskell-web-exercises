@@ -45,12 +45,14 @@
 <!--TWO-->
 <div class="col-lg-6">
 
+<div>
     <h6 class="roast1 text-light fs-3">Roast</h6>
 
 <form class="options d-flex flex-column justify-content-start">
 
-    <label for="roast-selection">
+    <label id="roast-selection">
         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+
             <option value="1">light</option>
             <option value="2">medium</option>
             <option value="3">dark</option>
@@ -59,8 +61,12 @@
 
 
     <h6 class="roast1 text-light fs-3 pt-3">Coffee Name</h6>
-    <input id="submit" type="submit" />
+    <input class="form-control mb-3" type="search" placeholder="What's your mood today?" aria-label="Search">
+
+    <button class="btn btn-outline-success bg-light text-dark" type="submit">Submit</button>
+
 </form>
+
 </div>
 
 <!--END OF BODY AFTER HEADER-->
