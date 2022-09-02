@@ -10,68 +10,135 @@
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@700&family=Homemade+Apple&family=Literata:opsz@7..72&display=swap" rel="stylesheet">
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/268742b2d0.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="bodyElement m-3">
+<body class="bodyElement m-0 p-0">
 
-<!--HEADER-->
-<div class="fancy-header text-light text-center m-1">
-<h1>Coffee! Inc</h1>
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg bg-body">
+    <div class="container-fluid">
+
+        <!--COFFEE MUG-->
+        <a class="navbar-brand">
+            <i class="fa-solid fa-mug-saucer text-dark d-flex justify-content-center"></i>
+        </a>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--NAVBAR OPTIONS-->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link border-white" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link border-white" id="menu-tab" data-bs-toggle="tab" data-bs-target="#menu-tab-pane" type="button" role="tab" aria-controls="menu-tab-pane" aria-selected="false">Menu</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link border-white" id="order-tab" data-bs-toggle="tab" data-bs-target="#order-tab-pane" type="button" role="tab" aria-controls="order-tab-pane" aria-selected="false">Order Now</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+
+
+                </div>
+
+
+                <div class="tab-pane fade" id="menu-tab-pane" role="tabpanel" aria-labelledby="menu-tab" tabindex="0">...</div>
+
+                <div class="tab-pane fade" id="order-tab-pane" role="tabpanel" aria-labelledby="order-tab" tabindex="0">...</div>
+            </div>
+
+<!--END OF NAVBAR OPTIONS-->
+        </div>
+
+<!--END OF NAVBAR-->
+    </div>
+</nav>
+
+
+
+
+<!--JUMBO/HEADER-->
+
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center w-auto" style="height: 40vh;">
+    <div class="container" style="background-image: url('Images/giphy-downsized-large.gif'); background-repeat: no-repeat; background-size: cover; margin: 0">
+        <h1 class="fancy-header text-light mb-0 fst-italic">Café!</h1>
+        <p class="lead text-light fs-6 text-lowercase ps-3">Brewing since 2022</p>
+    </div>
 </div>
-<hr class="line">
+
+<!--END OF JUMBO/HEADER-->
 
 
-<!--START OF BODY AFTER HEADER-->
-<div class="container">
-    <div class="row">
-
-<!--ONE-->
-<div class="col-lg-6">
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>ROAST</th>
-        </tr>
-        </thead>
-        <tbody id="coffees"></tbody>
-    </table>
-</div>
+    <hr class="line">
 
 
+<!--&lt;!&ndash;START OF BODY AFTER HEADER&ndash;&gt;-->
+<!--<div class="container">-->
+<!--    <div class="row">-->
 
-<!--TWO-->
-<div class="col-lg-6">
+<!--&lt;!&ndash;ONE&ndash;&gt;-->
+<!--<div class="col-lg-6">-->
+<!--    <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>ID</th>-->
+<!--            <th>NAME</th>-->
+<!--            <th>ROAST</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody id="coffees"></tbody>-->
+<!--    </table>-->
 
-<div>
-    <h6 class="roast1 text-light fs-3">Roast</h6>
-
-<form class="options d-flex flex-column justify-content-start">
-
-    <label id="roast-selection">
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-
-            <option value="1">light</option>
-            <option value="2">medium</option>
-            <option value="3">dark</option>
-        </select>
-    </label>
+<!--&lt;!&ndash;END OF ONE&ndash;&gt;-->
+<!--</div>-->
 
 
-    <h6 class="roast1 text-light fs-3 pt-3">Coffee Name</h6>
-    <input class="form-control mb-3" type="search" placeholder="What's your mood today?" aria-label="Search">
 
-    <button class="btn btn-outline-success bg-light text-dark" type="submit">Submit</button>
+<!--&lt;!&ndash;TWO&ndash;&gt;-->
+<!--<div class="col-lg-6">-->
 
-</form>
+<!--<div>-->
+<!--    <h6 class="roast1 text-dark fs-3">Roast</h6>-->
 
-</div>
+<!--<form class="options d-flex flex-column justify-content-start">-->
 
-<!--END OF BODY AFTER HEADER-->
-</div>
-</div>
+<!--    <label id="roast-selection">-->
+<!--        <select class="form-select form-select-sm" aria-label=".form-select-sm example">-->
+
+<!--            <option value="1">light</option>-->
+<!--            <option value="2">medium</option>-->
+<!--            <option value="3">dark</option>-->
+<!--        </select>-->
+<!--    </label>-->
+
+
+<!--    <h6 class="roast1 text-dark fs-3 pt-3">Coffee Name</h6>-->
+<!--    <input class="form-control mb-3" type="search" placeholder="What's your mood today?" aria-label="Search">-->
+
+<!--    <button class="btn btn-outline-success bg-dark text-light" type="submit">Submit</button>-->
+
+<!--</form>-->
+
+<!--</div>-->
+
+<!--&lt;!&ndash;END OF TWO&ndash;&gt;-->
+<!--</div>-->
+
+<!--&lt;!&ndash;END OF BODY AFTER HEADER&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+
 
 <script src="JS/coffee-project-draft.js"></script>
 </body>
