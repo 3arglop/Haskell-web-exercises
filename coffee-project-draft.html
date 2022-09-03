@@ -45,18 +45,21 @@
                 </li>
             </ul>
 
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <!--GOTTA FIND A WAY MY NAV TABS CAN GO TO THE SPECIFIC PAGE ITS ASSIGNED TO. I TRIED TO MIMIC THE NAVTABS WITH THE ONES I CREATED WITH
+            THE PIZZA PROJECT BUT IM GUESSING I HAVE TO USE ANOTHER BOOTSTRAP TEMPLATE TO ACHIEVE THIS. I WILL COME BACK TO THIS...-->
+
+<!--            <div class="tab-content" id="myTabContent">-->
+<!--                <div class="tab-pane fade show" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">-->
 
 
 
-                </div>
+<!--                </div>-->
 
 
-                <div class="tab-pane fade" id="menu-tab-pane" role="tabpanel" aria-labelledby="menu-tab" tabindex="0">...</div>
+<!--                <div class="tab-pane fade" id="menu-tab-pane" role="tabpanel" aria-labelledby="menu-tab" tabindex="0">...</div>-->
 
-                <div class="tab-pane fade" id="order-tab-pane" role="tabpanel" aria-labelledby="order-tab" tabindex="0">...</div>
-            </div>
+<!--                <div class="tab-pane fade" id="order-tab-pane" role="tabpanel" aria-labelledby="order-tab" tabindex="0">...</div>-->
+<!--            </div>-->
 
 <!--END OF NAVBAR OPTIONS-->
         </div>
@@ -83,61 +86,71 @@
     <hr class="line">
 
 
-<!--&lt;!&ndash;START OF BODY AFTER HEADER&ndash;&gt;-->
-<!--<div class="container">-->
-<!--    <div class="row">-->
+<!--START OF BODY AFTER HEADER-->
+<div class="container">
+    <div class="row">
 
-<!--&lt;!&ndash;ONE&ndash;&gt;-->
-<!--<div class="col-lg-6">-->
-<!--    <table>-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--            <th>ID</th>-->
-<!--            <th>NAME</th>-->
-<!--            <th>ROAST</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
+<!--ONE: JAVASCRIPT-->
+<div class="col-lg-6">
 
-<!--&lt;!&ndash;END OF ONE&ndash;&gt;-->
-<!--</div>-->
+    <div class="container">
+        <h3 class="mt-5 text-center" id="para" style="display: none;">Uh Oh!</h3>
+
+        <div class="row" id="showProd">
+
+        </div>
 
 
+    </div>
 
-<!--&lt;!&ndash;TWO&ndash;&gt;-->
-<!--<div class="col-lg-6">-->
-
-<!--<div>-->
-<!--    <h6 class="roast1 text-dark fs-3">Roast</h6>-->
-
-<!--<form class="options d-flex flex-column justify-content-start">-->
-
-<!--    <label id="roast-selection">-->
-<!--        <select class="form-select form-select-sm" aria-label=".form-select-sm example">-->
-
-<!--            <option value="1">light</option>-->
-<!--            <option value="2">medium</option>-->
-<!--            <option value="3">dark</option>-->
-<!--        </select>-->
-<!--    </label>-->
+    <!--END OF ONE: JAVASCRIPT-->
+</div>
 
 
-<!--    <h6 class="roast1 text-dark fs-3 pt-3">Coffee Name</h6>-->
-<!--    <input class="form-control mb-3" type="search" placeholder="What's your mood today?" aria-label="Search">-->
 
-<!--    <button class="btn btn-outline-success bg-dark text-light" type="submit">Submit</button>-->
+<!--TWO: USER INPUT-->
+<div class="col-lg-6 d-flex align-items-center justify-content-center">
 
-<!--</form>-->
 
-<!--</div>-->
+<!--ROAST-SELECTION & COFFEE NAME-->
+<div>
 
-<!--&lt;!&ndash;END OF TWO&ndash;&gt;-->
-<!--</div>-->
+<!--FORM USER INPUT 1-->
+<form class="options d-flex flex-column justify-content-start mt-3 w-0" style="width: 30em">
 
-<!--&lt;!&ndash;END OF BODY AFTER HEADER&ndash;&gt;-->
-<!--</div>-->
-<!--</div>-->
+<!--ROAST SELECTION-->
+    <label for="roast-selection">
+        <h6>Roast</h6>
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="roast-selection">
+
+            <option selected>All</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dark</option>
+        </select>
+    </label>
+
+<!--COFFEE NAME: SEARCHBAR-->
+
+    <h6 class="mb-4">Coffee Name</h6>
+    <input class="form-control mb-3" id="search" type="search" placeholder="Espresso" aria-label="Search">
+
+    <button class="btn btn-outline-light" type="submit" id="submit">Submit</button>
+
+
+<!--END OF FORM USER INPUT 1-->
+</form>
+
+
+<!--END OF ROAST-SELECTION AND COFFEE NAME-->
+</div>
+
+<!--END OF TWO-->
+</div>
+
+<!--END OF BODY AFTER HEADER-->
+</div>
+</div>
 
 
 <script src="JS/coffee-project-draft.js"></script>
