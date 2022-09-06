@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MOUSE EVENTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: hotpink;
+            color: white;
+            text-align: center;
+        }
+        #header {
+            background-color: mediumvioletred;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="header">Hello Hola Bonjour</h1>
+<p>Click Me!</p>
+<button type="button" id="button">I know U want 2</button>
+<button type="button">Try again</button>
+<button type="button" class="btn">Change The Header</button>
+
+
+
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--JS CODE-->
+<script>
+    var header = $('#header');
+    // header.click(function (e) {
+    //     alert("")
+    // });
+    var fun = function() {
+        console.log("my click header");
+    }
+    header.click(fun);
+
+    console.log(header.html());
+
+    var hoverIn = function() {
+        console.log("Inside");
+        header.css('background', 'black');
+    }
+    var hoverOut = function() {
+        console.log("Out");
+        header.css('background', 'mediumvioletred');
+    }
+    header.hover(hoverIn, hoverOut);
+
+    var button = $('#button');
+    var fun2 = function() {
+        console.log("my click buttton");
+    }
+    var tiktik = function() {
+        alert("You are awesome possum :)");
+    }
+    button.click(fun2);
+    button.click(tiktik);
+
+    var button2 = $('button');
+    button2.dblclick(function(e) {
+        alert('I see you...');
+        console.log("my second button dbl click");
+        console.log(e);
+    });
+
+    var para = $('p');
+    para.mouseenter(function() {
+        para.css('background', 'palevioletred');
+        console.log("inside para tag");
+    });
+    para.mouseout(function() {
+        para.css('background', 'hotpink');
+        console.log("outside para tag");
+    });
+
+    $('.btn').click(
+        function() {
+           header.css('font-family', 'Barriecito');
+        });
+
+</script>
+</body>
+</html>

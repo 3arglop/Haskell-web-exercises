@@ -96,5 +96,5 @@ showProd.innerHTML = renderCoffees(coffees);
 
 //BUTTON FUNCTIONALITY
 submitButton.addEventListener('click', updateCoffees);
-roastSelection.addEventListener('click', updateCoffees);
-fullMenu.addEventListener('keyup', searchCoffees);
+roastSelection.addEventListener('change', updateCoffees); // or 'click'
+fullMenu.addEventListener('input', searchCoffees); // or 'keyup'
