@@ -43,3 +43,14 @@ listItems.hover(
     listItems.css('background', 'yellowgreen');
         console.log("Outside");
     });
+
+var body = $('.bodyElement');
+body.mouseenter(function(e) {
+    body.css('text-align', 'center');
+    console.log("hover over done!");
+});
+
+body.mouseout(function(e) {
+    body.css('text-align', 'end');
+    console.log("hover out done!");
+});
