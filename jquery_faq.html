@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>National Parks Rule!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <style>
+        .bodyElement {
+            margin: 1em;
+            background-image: url("Images/D6C983F0-1DD8-B71B-0BA4FE3A6EC70B12HiResProxy.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1, #intro {
+            text-align: center;
+            color: white;
+            font-family: 'Bebas Neue', cursive;
+            line-height: .2em;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        #intro {
+            font-size: 1.5em;
+        }
+        .container {
+            margin: 2em;
+            padding: 1em;
+        }
+        #source {
+            margin-left: 2em;
+            line-height: 0;
+            color: white;
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+        dt {
+            text-decoration: underline;
+        }
+        a {
+            color: white;
+            font-size: 1.8em;
+            font-family: 'Bebas Neue', cursive;
+        }
+        dd {
+            color: white;
+            background-color: black;
+            opacity: 75%;
+            font-size: 1em;
+            font-family: 'Nanum Gothic Coding', monospace;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body class="bodyElement">
+<h1>National Parks FAQs</h1>
+
+<p id="intro">Have questions? Start here for answers to frequently asked questions about:</p>
+
+<hr>
+
+<div class="container">
+<dl>
+
+    <dt id="oneQ"><a href="#">Who is the director of the National Park Service?</a></dt>
+    <dd id="ans1">Charles F. "Chuck" Sams III is the Director of the National Park Service.</dd>
+
+    <dt id="twoQ"><a href="#">What government agency oversees the National Park Service?</a></dt>
+    <dd id="ans2">The National Park Service is a bureau of the Department of the Interior. Directly overseeing its operation is the department's Assistant Secretary for Fish, Wildlife and Parks.</dd>
+
+    <dt id="threeQ"><a href="#">How old is the National Park System?</a></dt>
+    <dd id="ans3">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System timeline.</dd>
+
+    <dt id="fourQ"><a href="#">How many areas are in the National Park System?</a></dt>
+    <dd id="ans4">The system includes 423 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House. Learn more about national park designations. See the complete list of National Park Service units and related areas by type and number.</dd>
+
+    <dt id="fiveQ"><a href="#">What is the largest national park site? Smallest?</a></dt>
+    <dd id="five1">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+    <dd id="five2">Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+
+    <dt id="sixQ"><a href="#">How many people visit the national parks?</a></dt>
+    <dd id="ans6">Total recreation visitors to the national parks in 2021: 297,115,406.</dd>
+
+    <dt id="sevenQ"><a href="#">What is the most-visited national park?</a></dt>
+    <dd id="ans7">Three parks had more than 10 million recreation visits: Blue Ridge Parkway, Great Smoky Mountains National Park, and Golden Gate National Recreation Area</dd>
+
+    <dt id="eightQ"><a href="#">How do I obtain a park entrance pass?</a></dt>
+    <dd id="ans8">Fewer than one-third of the national parks charge entrance fees. You can obtain park entrance passes by visiting a park site that charges an entrance fee. Entrance fee sites have passes available; we recommend calling a park prior to your visit. (See the park search to locate a specific park.) There are a number of entrance passes available, including park-specific passes as well as passes that offer entrance to more than 2,000 federal recreation sites in addition to the national parks (Annual, Military, Senior, 4th Grade, Access, and Volunteer passes). Learn more about the America the Beautiful - The National Parks and Federal Recreational Lands Pass.</dd>
+
+    <dt id="nineQ"><a href="#">How do I make reservations for camping/lodging in national parks?</a></dt>
+    <dd id="ans9">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. For more information on specific camping and lodging services offered at the park(s) of your interest, please check specific park websites. You can also learn more about camping in national parks and find a map of parks with camping opportunities.</dd>
+
+    <dt id="tenQ"><a href="#">How do I reserve a tour in a park?</a></dt>
+    <dd id="ans10">You can book some park tours through Recreation.gov such as Pearl Harbor National Memorial, many Mammoth Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks participate in this reservation service. For more information on tours offered at a specific park, please see the park search.</dd>
+
+</dl>
+</div>
+
+<hr>
+
+<div id="source">
+    <h5>SOURCE:</h5>
+    <p>"Frequently Asked Questions (U.S. National Park Service)." National Parks Service, U.S. Department of the Interior, https://www.nps.gov/aboutus/faqs.htm.
+    </p>
+</div>
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+
+    //QUESTION ONE
+    var preguntaUno = $('#ans1')
+    console.log(preguntaUno);
+
+    var hidden1 = preguntaUno.addClass('invisible');
+    console.log(hidden1);
+
+    $(window).ready(function() {
+        $('#oneQ').click(function(e) {
+            e.preventDefault();
+            hidden1.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION TWO
+    var preguntaDos = $('#ans2')
+    console.log(preguntaDos);
+
+    var hidden2 = preguntaDos.addClass('invisible');
+    console.log(hidden2);
+
+    $(window).ready(function() {
+        $('#twoQ').click(function(e) {
+            e.preventDefault();
+            hidden2.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION THREE
+    var preguntaTres = $('#ans3')
+    console.log(preguntaTres);
+
+    var hidden3 = preguntaTres.addClass('invisible');
+    console.log(hidden3);
+
+    $(window).ready(function() {
+        $('#threeQ').click(function(e) {
+            e.preventDefault();
+            hidden3.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION FOUR
+    var preguntaCuatro = $('#ans4')
+    console.log(preguntaCuatro);
+
+    var hidden4 = preguntaCuatro.addClass('invisible');
+    console.log(hidden4);
+
+    $(window).ready(function() {
+        $('#fourQ').click(function(e) {
+            e.preventDefault();
+            hidden4.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION FIVE
+    var preguntaCinco = $('#five1, #five2')
+    console.log(preguntaCinco);
+
+    var hidden5 = preguntaCinco.addClass('invisible');
+    console.log(hidden5);
+
+    $(window).ready(function() {
+        $('#fiveQ').click(function(e) {
+            e.preventDefault();
+            hidden5.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION SIX
+    var preguntaSeis = $('#ans6')
+    console.log(preguntaSeis);
+
+    var hidden6 = preguntaSeis.addClass('invisible');
+    console.log(hidden6);
+
+    $(window).ready(function() {
+        $('#sixQ').click(function(e) {
+            e.preventDefault();
+            hidden6.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION SEVEN
+    var preguntaSiete = $('#ans7')
+    console.log(preguntaSiete);
+
+    var hidden7 = preguntaSiete.addClass('invisible');
+    console.log(hidden7);
+
+    $(window).ready(function() {
+        $('#sevenQ').click(function(e) {
+            e.preventDefault();
+            hidden7.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION EIGHT
+    var preguntaOcho = $('#ans8')
+    console.log(preguntaOcho);
+
+    var hidden8 = preguntaOcho.addClass('invisible');
+    console.log(hidden8);
+
+    $(window).ready(function() {
+        $('#eightQ').click(function(e) {
+            e.preventDefault();
+            hidden8.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION TWO
+    var preguntaNueve = $('#ans9')
+    console.log(preguntaNueve);
+
+    var hidden9 = preguntaNueve.addClass('invisible');
+    console.log(hidden9);
+
+    $(window).ready(function() {
+        $('#nineQ').click(function(e) {
+            e.preventDefault();
+            hidden9.toggleClass('invisible');
+        });
+    });
+
+    //QUESTION TEN
+    var preguntaDiez = $('#ans10')
+    console.log(preguntaDiez);
+
+    var hidden10 = preguntaDiez.addClass('invisible');
+    console.log(hidden10);
+
+    $(window).ready(function() {
+        $('#tenQ').click(function(e) {
+            e.preventDefault();
+            hidden10.toggleClass('invisible');
+        });
+    });
+
+</script>
+</body>
+</html>
