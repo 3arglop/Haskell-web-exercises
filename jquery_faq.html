@@ -63,6 +63,9 @@
         .invisible {
             visibility: hidden;
         }
+        .highlight {
+            background-color: orange;
+        }
     </style>
 </head>
 <body class="bodyElement">
@@ -150,11 +153,27 @@
     var preguntas = $('dt');
     console.log(preguntas);
 
-    var highlight = preguntas.addClass('highlight');
+    // var highlight = preguntas.addClass('highlight');
+    // console.log(highlight);
+
+    // $(window).ready(function() {
+    //    preguntas.click(function(e) {
+    //        highlight.toggleClass($(this).css('background', 'orange'));
+    //    });
+    // });
+
+    // $(window).ready(function() {
+    //     preguntas.click(function(e) {
+    //         $(this).addClass('highlight');
+    //     });
+    //     preguntas.dblclick(function(e) {
+    //        $(this).removeClass('highlight');
+    //     });
+    // });
 
     $(window).ready(function() {
        preguntas.click(function(e) {
-           highlight.toggleClass($(this).css('background', 'orange'));
+           $(this).toggleClass('highlight');
        });
     });
 
