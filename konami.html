@@ -2,13 +2,62 @@
 <html>
 <head>
     <title>Konami Code</title>
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Monoton&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("Images/80f9d4af066c7c4245b80ffd41975f29.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            text-align: center;
+        }
+        h1{
+            font-family: 'Monoton', cursive;
+            color: greenyellow;
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+        #intro {
+            font-family: 'Cutive Mono', monospace;
+            color: white;
+            font-size: 1.5em;
+            text-decoration: underline;
+            margin-top: 0;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin-top: 8em;
+        }
+        #code{
+            color: white;
+            font-size: 5em;
+            background-color: indianred;
+            opacity: 50%;
+            font-family: 'Cutive Mono', monospace;
+
+        }
+        .show {
+            visibility: visible;
+        }
+    </style>
 </head>
 <body class="bodyElement">
 <h1>Konami Code</h1>
 
-<p style="text-decoration: underline">Double click me first!</p>
+<p id="intro">double click me first!</p>
 
-<p class="code">
+<div class="container">
+<p id="code">
     <span>&uarr;</span>
     <span>&uarr;</span>
     <span>&darr;</span>
@@ -20,7 +69,7 @@
     <span>B</span>
     <span>A</span>
 </p>
-
+</div>
 
 <!--jQuery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
