@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Monoton&display=swap" rel="stylesheet">
 
+    <!--ANIMATIONS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <style>
         body {
             background-image: url("Images/80f9d4af066c7c4245b80ffd41975f29.gif");
@@ -21,6 +24,9 @@
             color: greenyellow;
             font-size: 3em;
             margin-bottom: 0;
+        }
+        .animate__animated.animate__heartBeat {
+            --animate-duration: 15s;
         }
         #intro {
             font-family: 'Cutive Mono', monospace;
@@ -52,7 +58,7 @@
     </style>
 </head>
 <body class="bodyElement">
-<h1>Konami Code</h1>
+<h1 class="animate__animated animate__heartBeat">Konami Code</h1>
 
 <p id="intro">double click me first!</p>
 
