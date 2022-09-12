@@ -121,7 +121,9 @@
                 var popup2 = new mapboxgl.Popup()
                     .setHTML(info.popupHTML);
                 map.setCenter(coordinates);
-                var marker2 = new mapboxgl.Marker()
+                var marker2 = new mapboxgl.Marker({
+                    color: "pink"
+                })
                     .setLngLat(coordinates)
                     .addTo(map)
                     .setPopup(popup2);
