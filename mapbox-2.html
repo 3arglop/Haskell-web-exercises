@@ -5,8 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mapbox: Mexico</title>
-
+    <title>Mapbox: USA</title>
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@300&display=swap" rel="stylesheet">
     <!--MAPBOX-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -19,41 +22,41 @@
             margin: 0;
             padding: 0;
             margin-left: 18rem;
-        }
-        #btn {
-            margin-top: 2rem;
+            border: 10px solid #FFFFFF;
         }
         body {
             text-align: center;
-            background: rgb(0,99,65);
-            background: linear-gradient(90deg, rgba(0,99,65,1) 0%, rgba(255,255,255,1) 50%, rgba(206,17,38,1) 100%);background: rgb(0,99,65);
-            background: linear-gradient(90deg, rgba(0,99,65,1) 0%, rgba(255,255,255,1) 50%, rgba(206,17,38,1) 100%);
+            background-image: linear-gradient(to bottom, #0a3161, #44527d, #707699, #9b9cb7, #c6c5d5, #cdc7db, #d5c9e1, #dfcbe5, #d4a1c6, #cb769b, #be4a67, #a6192e);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        h1, h2 {
+            color: white;
+            font-size: 3rem;
+            font-family: 'Lobster', cursive;
+            text-shadow: 2px 2px black;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            margin-top: 10rem;
+            margin-top: 7rem;
         }
-        h1 {
-            font-family: Georgia;
+        #LM {
+            font-family: 'Oswald', sans-serif;
+            text-shadow: none;
         }
-
     </style>
 </head>
 <body>
 
 <div class="container">
-<h1>Mi Mexico Lindo!</h1>
+    <h1>Welcome to Washington D.C</h1>
 
 
-<div id='map'></div>
+    <div id='map'></div>
 
-
+    <h2>Home of the Lincoln Memorial...</h2>
 </div>
 
-<button id="btn">Zoom Out!</button>
 
 
 
@@ -72,8 +75,8 @@
     mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/navigation-day-v1', // style URL
-        center: [-99.133209, 19.432608], // starting position [lng, lat]
+        style: 'mapbox://styles/mapbox/satellite-streets-v11', // style URL
+        center: [-77.0369, 38.9072], // starting position [lng, lat]
         zoom: 10, // starting zoom
         projection: 'mercator' // display the map as a 3D globe
     });
@@ -81,24 +84,21 @@
         map.setFog({}); // Set the default atmosphere style
     });
 
-    // var button = $('#btn');
-    // console.log(button);
+    let marker = new mapboxgl.Marker({
+        color: 'red'
+    })
+        .setLngLat([-77.0502, 38.8893])
+        .addTo(map);
 
-    // const americas = new mapboxgl.LngLat(-105.2551, 54.5260);
-    // console.log(americas); // BOTH VALUES
+    var popup = new mapboxgl.Popup()
+        .setHTML('<h1 id="LM" style="color: darkblue; font-size: 2rem">Lincoln Memorial</h1><a href="https://www.nps.gov/linc/index.htm">Website</a>');
 
-    // //ZOOM ZOOM ZOOM
-    // $(window).ready(function() {
-    //    button.click(function(e) {
-    //         e.preventDefault();
-    //         map.setZoom(3);
-    //         console.log("click");
-    //     });
-    // });
+    marker.setPopup(popup);
+
 
     setTimeout(function() {
-        map.setCenter([-105.2551, 54.5260]);
-        map.setZoom(1);
+        map.setCenter([-77.0502, 38.8893]);
+        map.setZoom(17);
         map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
     }, 5000);
 
