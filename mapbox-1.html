@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox with STYLE!</title>
+
+    <!--MAPBOX-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!--CSS-->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 60%;
+            height: 50vh;
+            margin: 0;
+            padding: 0;
+            margin-left: 18rem;
+        }
+        #btn {
+            margin-top: 2rem;
+        }
+        body {
+            text-align: center;
+            background: rgb(0,99,65);
+            background: linear-gradient(90deg, rgba(0,99,65,1) 0%, rgba(255,255,255,1) 50%, rgba(206,17,38,1) 100%);background: rgb(0,99,65);
+            background: linear-gradient(90deg, rgba(0,99,65,1) 0%, rgba(255,255,255,1) 50%, rgba(206,17,38,1) 100%);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            margin-top: 10rem;
+        }
+        h1 {
+            font-family: Georgia;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+<h1>Mi Mexico Lindo!</h1>
+
+
+<div id='map'></div>
+
+
+</div>
+
+<button id="btn">Zoom Out!</button>
+
+
+
+
+<!--MAPBOX-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--MY CREDENTIALS-->
+<script src="JS/keys.js"></script>
+
+
+<script>
+    //TODO: In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style. Use a setTimeout function to achieve this.
+
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/navigation-day-v1', // style URL
+        center: [-99.133209, 19.432608], // starting position [lng, lat]
+        zoom: 10, // starting zoom
+        projection: 'mercator' // display the map as a 3D globe
+    });
+    map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+    });
+
+    // var button = $('#btn');
+    // console.log(button);
+
+    // const americas = new mapboxgl.LngLat(-105.2551, 54.5260);
+    // console.log(americas); // BOTH VALUES
+
+    // //ZOOM ZOOM ZOOM
+    // $(window).ready(function() {
+    //    button.click(function(e) {
+    //         e.preventDefault();
+    //         map.setZoom(3);
+    //         console.log("click");
+    //     });
+    // });
+
+    setTimeout(function() {
+        map.setCenter([-105.2551, 54.5260]);
+        map.setZoom(1);
+        map.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
+    }, 5000);
+
+
+</script>
+</body>
+</html>
