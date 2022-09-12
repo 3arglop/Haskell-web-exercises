@@ -21,13 +21,13 @@
             height: 50vh;
             margin: 0;
             padding: 0;
-            margin-left: 18rem;
+            margin-left: 37rem;
             border: 10px solid #FFFFFF;
         }
         body {
             text-align: center;
             background-image: linear-gradient(to bottom, #0a3161, #44527d, #707699, #9b9cb7, #c6c5d5, #cdc7db, #d5c9e1, #dfcbe5, #d4a1c6, #cb769b, #be4a67, #a6192e);
-            background-repeat: no-repeat;
+            background-repeat: repeat-y;
             background-size: cover;
             height: 100vh;
         }
@@ -44,6 +44,14 @@
             font-family: 'Oswald', sans-serif;
             text-shadow: none;
         }
+        #location {
+            line-height: 2rem;
+        }
+        h3 {
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
@@ -57,8 +65,12 @@
     <h2>Home of the Lincoln Memorial...</h2>
 </div>
 
+<br>
 
-
+<section id="location">
+    <h2>Where am I?</h2>
+    <h3 id="coordinates"></h3>
+</section>
 
 
 <!--MAPBOX-->
@@ -84,16 +96,26 @@
         map.setFog({}); // Set the default atmosphere style
     });
 
-    let marker = new mapboxgl.Marker({
-        color: 'red'
-    })
-        .setLngLat([-77.0502, 38.8893])
-        .addTo(map);
-
     var popup = new mapboxgl.Popup()
         .setHTML('<h1 id="LM" style="color: darkblue; font-size: 2rem">Lincoln Memorial</h1><a href="https://www.nps.gov/linc/index.htm">Website</a>');
 
-    marker.setPopup(popup);
+    let marker = new mapboxgl.Marker({
+        color: 'red',
+        draggable: true
+    })
+        .setLngLat([-77.0502, 38.8893])
+        .setPopup(popup)
+        .addTo(map);
+
+    marker.on('dragend', function() {
+        var coordinates = marker.getLngLat();
+        console.log(coordinates);
+        var location = $('#coordinates');
+        location.html('Latitude: ' + coordinates.lat + '<br> Longitude: ' + coordinates.lng);
+    });
+
+
+
 
 
     setTimeout(function() {
