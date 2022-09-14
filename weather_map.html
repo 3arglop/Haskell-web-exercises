@@ -26,6 +26,9 @@
         #forecast {
             height: 60vh;
         }
+        .content {
+            background-color: pink;
+        }
     </style>
 </head>
 <body>
@@ -36,8 +39,13 @@
             <span class="navbar-text">
                 What's the Weather?
             </span>
+            <span class="search m-3 text-center">
+                <input type="text" id="searchBar">
+                <button type="button" id="btn">Go!</button>
+            </span>
                 <span class="navbar-text">
-                Current Weather: Dallas, Texas
+                    <h6>Current Weather: </h6>
+                    <div id="cityCountry">Dallas, US</div>
             </span>
         </div>
     </nav>
@@ -45,16 +53,14 @@
 
 
 <!--SEARCHBAR-->
-<div class="search m-3 text-center">
-    <input type="text" id="searchBar">
-    <button type="button" id="btn">Go!</button>
-</div>
+
 
 <!--CARDS FOR THE CITY'S WEATHER FORECAST 5 DAYS-->
-<div class="container">
+<div class="content">
     <div class="d-flex flex-row justify-content-evenly m-2" id="forecast">
 
-        <div class="card" id="weather">
+
+        <div class="card" id="day1">
             <h2 id="date">2022-09-14</h2>
             <div id="temp">51°F</div>
             <img src="" alt="" class="icon">
@@ -62,42 +68,42 @@
             <div id="humidity">Humidity: 71%</div>
             <div id="wind">Wind: 5.84 mph</div>
             <div id="pressure">Pressure: 29.97 inHg</div>
-            <div id="precipitation">Precipitation: 0"</div>
         </div>
-        <div class="card" id="weather2">
+
+        <div class="card" id="day2">
             <h2 id="date2">2022-09-14</h2>
             <div id="temp2">51°F</div>
-            <img src="" alt="" class="icon">
+            <img src="" alt="" class="icon2">
             <div id="description2">Clear</div>
             <div id="humidity2">Humidity: 71%</div>
             <div id="wind2">Wind: 5.84 mph</div>
             <div id="pressure2">Pressure: 29.97 inHg</div>
             <div id="precipitation2">Precipitation: 0"</div>
         </div>
-        <div class="card" id="weather3">
+        <div class="card" id="day3">
             <h2 id="date3">2022-09-14</h2>
             <div id="temp3">51°F</div>
-            <img src="" alt="" class="icon">
+            <img src="" alt="" class="icon3">
             <div id="description3">Clear</div>
             <div id="humidity3">Humidity: 71%</div>
             <div id="wind3">Wind: 5.84 mph</div>
             <div id="pressure3">Pressure: 29.97 inHg</div>
             <div id="precipitation3">Precipitation: 0"</div>
         </div>
-        <div class="card" id="weather4">
+        <div class="card" id="day4">
             <h2 id="date4">2022-09-14</h2>
             <div id="temp4">51°F</div>
-            <img src="" alt="" class="icon">
+            <img src="" alt="" class="icon4">
             <div id="description4">Clear</div>
             <div id="humidity4">Humidity: 71%</div>
             <div id="wind4">Wind: 5.84 mph</div>
             <div id="pressure4">Pressure: 29.97 inHg</div>
             <div id="precipitation4">Precipitation: 0"</div>
         </div>
-        <div class="card" id="weather5">
+        <div class="card" id="day5">
             <h2 id="date5">2022-09-14</h2>
             <div id="temp5">51°F</div>
-            <img src="" alt="" class="icon">
+            <img src="" alt="" class="icon5">
             <div id="description5">Clear</div>
             <div id="humidity5">Humidity: 71%</div>
             <div id="wind5">Wind: 5.84 mph</div>
@@ -113,6 +119,18 @@
 <!--MAP WITH MARKERS AND POPUP-->
 <div>
     <div class="map rounded-pill" id='map'></div>
+    <div class="mapContent d-flex justify-content-center">
+        <div class="card text-center">
+            <h1 id="map-intro">Today's Weather</h1>
+            <h2 id="map-title">Dallas</h2>
+            <div id="map-temp">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="map-desc">Sunny</div>
+            <div id="map-max">H: 89°F</div>
+            <div id="map-min">L: 64°F</div>
+            <div></div>
+        </div>
+    </div>
 </div>
 
 <!--BOOTSTRAP JS-->
@@ -127,6 +145,8 @@
 <script src="JS/mapbox-geocoder-utils.js"></script>
 
 <script>
+    "use strict";
+
     //REQUESTING MAPBOX
     mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
@@ -141,16 +161,119 @@
     });
 
     //REQUESTING OPEN WEATHER
-    $.get('https://api.openweathermap.org/data/2.5/forecast', {
-        appid: openWEATHER,
-        id: 4684888,
-        units: 'imperial'
-    }).done(function(data) {
-        console.log('current weather', data);
-        console.log('5 day forecast', data);
-    }).fail(function(error) {
-        console.log(error);
-    });
+   let weather = {
+       fetchWeather: function(city, country) {
+           $.get("http://api.openweathermap.org/data/2.5/forecast?q=" +
+               city +
+               "," +
+               country +
+               "&units=imperial&appid=" +
+               openWEATHER)
+               // .then((response) => response.json())
+               .then((data) => this.displayWeather(data))
+              // .then((data) => console.log(data));
+       },
+
+           //FUNCTION TO DISPLAY WEATHER
+           displayWeather: function(data) {
+               var cityName = data.city.name;
+               console.log(cityName);
+               var countryName = data.city.country
+               // console.log(countryName);
+               var cityDate = data.list[0].dt_txt.slice(0, 10)
+               console.log(cityDate);
+               var cityTemp = data.list[0].main.temp
+               // console.log(cityTemp);
+               var cityIcon = data.list[0].weather[0].icon
+               console.log(cityIcon);
+               var cityDesc = data.list[0].weather[0].description
+               // console.log(cityDesc);
+               var cityHumid = data.list[0].main.humidity
+               // console.log(cityHumid);
+               var cityWind = data.list[0].wind.speed
+               // console.log(cityWind);
+               var cityPress = data.list[0].main.pressure
+               // console.log(cityPress);
+               console.log(cityName, countryName, cityDate, cityTemp, cityIcon, cityDesc, cityHumid, cityWind, cityPress);
+
+               //CHANGING THE INNER TEXT OF THE CARD
+                       date.text(cityDate);
+                       console.log(date.text());
+                       temp.text(cityTemp);
+                       console.log(temp.text());
+
+                       document.querySelector(".icon").src = "http://openweathermap.org/img/wn/" +
+                           cityIcon +
+                           ".png";
+                       // pic.html('<img src="http://openweathermap.org/img/wn/' +
+                       //     cityIcon +
+                       //     '.png" alt="" class="icon">');
+                       // console.log(pic.html());
+
+                       console.log(description.text());
+                       humidity.text("Humidity: " + cityHumid + "%");
+                       wind.text("Wind: " + cityWind + "mph");
+                       console.log(wind.text());
+                       pressure.text("Pressure: " + cityPress + " inHg");
+                       console.log(pressure.text());
+           }
+   }
+
+
+    //DALLAS DEFAULT MARKER WITH POPUP
+    let dallasInfo = {
+        address: "2014 Main St, Dallas, TX 75201",
+        popupHTML: "<h1>Dallas, Texas</h1>"
+    };
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            console.log(coordinates);
+            var dallasPop = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            map.setCenter(coordinates);
+            var dallasPop = new mapboxgl.Marker({
+                color: "pink",
+                draggable: true
+            })
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(dallasPop);
+            dallasPop.addTo(map);
+        });
+    }
+    placeMarkerAndPopup(dallasInfo, MAPBOX_TOKEN, map);
+
+
+    //DECLARING MY VARIABLES
+    var searchBar = $('#searchBar');
+    // console.log(searchBar);
+    var button = $('#btn');
+    // console.log(button);
+    var current = $('#cityState');
+    // console.log(current);
+
+    //CARD UNO
+    var date = $('#date');
+    // console.log(date);
+    var temp = $('#temp');
+    // console.log(temp);
+    var description = $('#description');
+    // console.log(description);
+    var humidity = $('#humidity');
+    // console.log(humidity);
+    var wind = $('#wind');
+    // console.log(wind);
+    var pressure = $('#pressure');
+    // console.log(pressure);
+
+    //CARD DOS
+    var date2 = $('#date2');
+    var temp2 = $('#temp2');
+    var description2 = $('#description2');
+    var humidity2 = $('#humidity2');
+    var wind2 = $('#wind2');
+    var pressure2 = $('#pressure2');
+    var precipitation2 = $('#precipitation2');
 
 </script>
 </body>
