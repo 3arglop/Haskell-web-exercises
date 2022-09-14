@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+    <!--GOOGLE FONTS-->
+
+    <!--MAPBOX-->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!--CSS-->
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+            border: 18px solid white;
+        }
+        .navbar span {
+            color: white;
+        }
+        #forecast {
+            height: 60vh;
+        }
+    </style>
+</head>
+<body>
+
+<!--HEADER-->
+<nav class="navbar sticky-top bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-text">
+                What's the Weather?
+            </span>
+                <span class="navbar-text">
+                Current Weather: Dallas, Texas
+            </span>
+        </div>
+    </nav>
+</nav>
+
+
+<!--SEARCHBAR-->
+<div class="search m-3 text-center">
+    <input type="text" id="searchBar">
+    <button type="button" id="btn">Go!</button>
+</div>
+
+<!--CARDS FOR THE CITY'S WEATHER FORECAST 5 DAYS-->
+<div class="container">
+    <div class="d-flex flex-row justify-content-evenly m-2" id="forecast">
+
+        <div class="card" id="weather">
+            <h2 id="date">2022-09-14</h2>
+            <div id="temp">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="description">Clear</div>
+            <div id="humidity">Humidity: 71%</div>
+            <div id="wind">Wind: 5.84 mph</div>
+            <div id="pressure">Pressure: 29.97 inHg</div>
+            <div id="precipitation">Precipitation: 0"</div>
+        </div>
+        <div class="card" id="weather2">
+            <h2 id="date2">2022-09-14</h2>
+            <div id="temp2">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="description2">Clear</div>
+            <div id="humidity2">Humidity: 71%</div>
+            <div id="wind2">Wind: 5.84 mph</div>
+            <div id="pressure2">Pressure: 29.97 inHg</div>
+            <div id="precipitation2">Precipitation: 0"</div>
+        </div>
+        <div class="card" id="weather3">
+            <h2 id="date3">2022-09-14</h2>
+            <div id="temp3">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="description3">Clear</div>
+            <div id="humidity3">Humidity: 71%</div>
+            <div id="wind3">Wind: 5.84 mph</div>
+            <div id="pressure3">Pressure: 29.97 inHg</div>
+            <div id="precipitation3">Precipitation: 0"</div>
+        </div>
+        <div class="card" id="weather4">
+            <h2 id="date4">2022-09-14</h2>
+            <div id="temp4">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="description4">Clear</div>
+            <div id="humidity4">Humidity: 71%</div>
+            <div id="wind4">Wind: 5.84 mph</div>
+            <div id="pressure4">Pressure: 29.97 inHg</div>
+            <div id="precipitation4">Precipitation: 0"</div>
+        </div>
+        <div class="card" id="weather5">
+            <h2 id="date5">2022-09-14</h2>
+            <div id="temp5">51°F</div>
+            <img src="" alt="" class="icon">
+            <div id="description5">Clear</div>
+            <div id="humidity5">Humidity: 71%</div>
+            <div id="wind5">Wind: 5.84 mph</div>
+            <div id="pressure5">Pressure: 29.97 inHg</div>
+            <div id="precipitation5">Precipitation: 0"</div>
+        </div>
+
+    </div>
+</div>
+
+<br>
+
+<!--MAP WITH MARKERS AND POPUP-->
+<div>
+    <div class="map rounded-pill" id='map'></div>
+</div>
+
+<!--BOOTSTRAP JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--MAPBOX-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--MY CREDENTIALS-->
+<script src="JS/keys.js"></script>
+<!-- Mapbox Geocoder Util Methods -->
+<script src="JS/mapbox-geocoder-utils.js"></script>
+
+<script>
+    //REQUESTING MAPBOX
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        center: [-95.7129, 37.0902],
+        zoom: 3,
+        projection: 'mercator'
+    });
+    map.on('style.load', () => {
+        map.setFog({});
+    });
+
+    //REQUESTING OPEN WEATHER
+    $.get('https://api.openweathermap.org/data/2.5/forecast', {
+        appid: openWEATHER,
+        id: 4684888,
+        units: 'imperial'
+    }).done(function(data) {
+        console.log('current weather', data);
+        console.log('5 day forecast', data);
+    }).fail(function(error) {
+        console.log(error);
+    });
+
+</script>
+</body>
+</html>

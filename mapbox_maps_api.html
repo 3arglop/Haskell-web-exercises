@@ -70,86 +70,89 @@
         map.setFog({});
     });
 
-    var restaurants = [
-        {
-            name: 'Rica Pizza',
-            address: '8868 Federal Blvd Suite 16-A, Federal Heights, CO 80260',
-            message: 'Great Pizza and Wings!'
-        },
-        {
-            name: 'Tacos El Gordo',
-            address: '3041 S Las Vegas Blvd, Las Vegas, NV 89109',
-            message: '¿Sus Tacos de Trompo? ¡Uuuuff, que DELICIA!'
-        },
-        {
-            name: 'Shin-Sen-Gumi Hakata Ramen-Gardena',
-            address: '2015 W Redondo Beach Blvd #C, Gardena, CA 90247',
-            message: 'Best Ramen in California, baby!'
-        },
-        {
-            name: 'Monarch',
-            address: '1401 Elm St 49th Floor, Dallas, TX 75202',
-            message: 'Date Night with a view...'
-        },
-        {
-            name: 'The Varsity',
-            address: '61 North Avenue NW, Atlanta, GA 30308',
-            message: 'Fun place to eat!'
-        },
+    // var restaurants = [
+    //     {
+    //         name: 'Rica Pizza',
+    //         address: '8868 Federal Blvd Suite 16-A, Federal Heights, CO 80260',
+    //         message: 'Great Pizza and Wings!'
+    //     },
+    //     {
+    //         name: 'Tacos El Gordo',
+    //         address: '3041 S Las Vegas Blvd, Las Vegas, NV 89109',
+    //         message: '¿Sus Tacos de Trompo? ¡Uuuuff, que DELICIA!'
+    //     },
+    //     {
+    //         name: 'Shin-Sen-Gumi Hakata Ramen-Gardena',
+    //         address: '2015 W Redondo Beach Blvd #C, Gardena, CA 90247',
+    //         message: 'Best Ramen in California, baby!'
+    //     },
+    //     {
+    //         name: 'Monarch',
+    //         address: '1401 Elm St 49th Floor, Dallas, TX 75202',
+    //         message: 'Date Night with a view...'
+    //     },
+    //     {
+    //         name: 'The Varsity',
+    //         address: '61 North Avenue NW, Atlanta, GA 30308',
+    //         message: 'Fun place to eat!'
+    //     },
+    //
+    // ];
+    //
+    // //DECLARING MY VARIABLES
+    // let ricaPopup = new mapboxgl.Popup()
+    //         .setHTML('<h1 id="rica" style="color: black;">Rica Pizza</h1><a href="https://www.ricapizza.com/order/">Website</a>');
+    // let gordoPopup = new mapboxgl.Popup()
+    //     .setHTML('<h1 id="gordo" style="color: black;">Tacos El Gordo</h1><a href="http://tacoselgordobc.com/">Website</a>');
+    // let hakataPopup = new mapboxgl.Popup()
+    //     .setHTML('<h1 id="hakata" style="color: black;">Shin-Sen-Gumi Hakata Ramen - Gardena</h1><a href="https://shinsengumigroup.com/">Website</a>');
+    // let monarchPopup = new mapboxgl.Popup()
+    //     .setHTML('<h1 id="monarch" style="color: black;">Monarch Restaurant</h1><a href="https://www.monarchrestaurants.com/">Website</a>');
+    // let varsityPopup = new mapboxgl.Popup()
+    //     .setHTML('<h1 id="varsity" style="color: black;">The Varsity</h1><a href="https://thevarsity.com/">Website</a>');
+    //
+    // let ricaMark = new mapboxgl.Marker({
+    //     color: '#60100B',
+    // })
+    //     .setLngLat([-105.02423450795293, 39.8580597077152])
+    //     .setPopup(ricaPopup)
+    //     .addTo(map);
+    // console.log(ricaMark);
+    //
+    // let gordoMark = new mapboxgl.Marker({
+    //     color: '#FC6C46',
+    // })
+    //     .setLngLat([-115.07963969000994, 36.89933930102714])
+    //     .setPopup(gordoPopup)
+    //     .addTo(map);
+    // console.log(gordoMark);
+    //
+    // let hakataMark = new mapboxgl.Marker({
+    //     color: 'black',
+    // })
+    //     .setLngLat([-118.32265771066281 ,34.49485390578418])
+    //     .setPopup(hakataPopup)
+    //     .addTo(map);
+    // console.log(hakataMark);
+    //
+    // let monarchMark = new mapboxgl.Marker({
+    //     color: '#12274B',
+    // })
+    //     .setLngLat([-96.79897620951218 ,32.786903516389735])
+    //     .setPopup(monarchPopup)
+    //     .addTo(map);
+    // console.log(monarchMark);
+    //
+    // let varsityMark = new mapboxgl.Marker({
+    //     color: '#E6D2B9',
+    // })
+    //     .setLngLat([-84.38896217347792,33.77671169494561])
+    //     .setPopup(varsityPopup)
+    //     .addTo(map);
+    // console.log(varsityMark);
 
-    ];
 
-    //DECLARING MY VARIABLES
-    let ricaPopup = new mapboxgl.Popup()
-            .setHTML('<h1 id="rica" style="color: black;">Rica Pizza</h1><a href="https://www.ricapizza.com/order/">Website</a>');
-    let gordoPopup = new mapboxgl.Popup()
-        .setHTML('<h1 id="gordo" style="color: black;">Tacos El Gordo</h1><a href="http://tacoselgordobc.com/">Website</a>');
-    let hakataPopup = new mapboxgl.Popup()
-        .setHTML('<h1 id="hakata" style="color: black;">Shin-Sen-Gumi Hakata Ramen - Gardena</h1><a href="https://shinsengumigroup.com/">Website</a>');
-    let monarchPopup = new mapboxgl.Popup()
-        .setHTML('<h1 id="monarch" style="color: black;">Monarch Restaurant</h1><a href="https://www.monarchrestaurants.com/">Website</a>');
-    let varsityPopup = new mapboxgl.Popup()
-        .setHTML('<h1 id="varsity" style="color: black;">The Varsity</h1><a href="https://thevarsity.com/">Website</a>');
 
-    let ricaMark = new mapboxgl.Marker({
-        color: '#60100B',
-    })
-        .setLngLat([-105.02423450795293, 39.8580597077152])
-        .setPopup(ricaPopup)
-        .addTo(map);
-    console.log(ricaMark);
-
-    let gordoMark = new mapboxgl.Marker({
-        color: '#FC6C46',
-    })
-        .setLngLat([-115.07963969000994, 36.89933930102714])
-        .setPopup(gordoPopup)
-        .addTo(map);
-    console.log(gordoMark);
-
-    let hakataMark = new mapboxgl.Marker({
-        color: 'black',
-    })
-        .setLngLat([-118.32265771066281 ,34.49485390578418])
-        .setPopup(hakataPopup)
-        .addTo(map);
-    console.log(hakataMark);
-
-    let monarchMark = new mapboxgl.Marker({
-        color: '#12274B',
-    })
-        .setLngLat([-96.79897620951218 ,32.786903516389735])
-        .setPopup(monarchPopup)
-        .addTo(map);
-    console.log(monarchMark);
-
-    let varsityMark = new mapboxgl.Marker({
-        color: '#E6D2B9',
-    })
-        .setLngLat([-84.38896217347792,33.77671169494561])
-        .setPopup(varsityPopup)
-        .addTo(map);
-    console.log(varsityMark);
 
 
 

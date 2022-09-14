@@ -1,0 +1,67 @@
+[{
+  "type": "restaurantCollection",
+  "features": [
+    {
+      "type": "Restaurant",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.02423450795293, 39.8580597077152]
+      },
+      "properties": {
+          "title": "Rica Pizza",
+        "address": "8868 Federal Blvd Suite 16-A, Federal Heights, CO 80260",
+        "description": "Great Pizza and Wings!"
+      }
+    },
+    {
+      "type": "Restaurant",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-115.07963969000994, 36.89933930102714]
+      },
+      "properties": {
+       "title": "Tacos EL Gordo",
+        "address": "3041 S Las Vegas Blvd, Las Vegas, NV 89109",
+        "description": "¿Sus Tacos de Trompo? ¡Uuuuff, que DELICIA!"
+      }
+    },
+    {
+      "type": "Restaurant",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.32265771066281 ,34.49485390578418]
+      },
+      "properties": {
+        "title": "Shin-Sen-Gumi Hakata Ramen-Gardena",
+        "address": "2015 W Redondo Beach Blvd #C, Gardena, CA 90247",
+        "description": "Best Ramen in California, baby!"
+      }
+    },
+    {
+      "type": "Restaurant",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-96.79897620951218 ,32.786903516389735]
+      },
+      "properties": {
+        "title": "Monarch",
+        "address": "1401 Elm St 49th Floor, Dallas, TX 75202",
+        "description": "Date Night with a view..."
+      }
+    },
+    {
+      "type": "Restaurant",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.38896217347792,33.77671169494561]
+      },
+      "properties": {
+        "title": "The Varsity",
+        "address": "61 North Avenue NW, Atlanta, GA 30308",
+        "description": "Fun place to eat!"
+      }
+    }
+  ]
+}]
+
+
