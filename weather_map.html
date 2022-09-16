@@ -45,7 +45,8 @@
             </span>
                 <span class="navbar-text">
                     <h6>Current Weather: </h6>
-                    <div id="cityCountry">Dallas, US</div>
+                    <span id="city">Dallas,</span>
+                    <span id="country">US</span>
             </span>
         </div>
     </nav>
@@ -53,7 +54,7 @@
 
 <!--CARDS FOR THE CITY'S WEATHER FORECAST 5 DAYS-->
 <div class="content">
-    <div class="row d-flex flex-row justify-content-evenly m-2" id="forecast">
+    <div class="d-flex flex-row justify-content-evenly m-2" id="forecast">
 
 
 
@@ -143,6 +144,31 @@
 
 <script>
     "use strict";
+
+    $(window).ready(function() {
+
+        function fetchWeather(city, country) {
+            $.get("http://api.openweathermap.org/data/2.5/forecast?q=" +
+                city +
+                "," +
+                country +
+                "&units=imperial&appid=" +
+                openWEATHER)
+                // .then((response) => { return response.json()})
+                // .then((data) => this.displayWeather(data))
+                .then((data) => console.log(data));
+        }
+        fetchWeather("dallas", "us");
+        fetchWeather("mexico city", "mx");
+        fetchWeather("london", "gb");
+
+
+
+
+    });
+
+
+
 
    //  //REQUESTING MAPBOX
    //  mapboxgl.accessToken = MAPBOX_TOKEN;
@@ -241,13 +267,13 @@
    //  placeMarkerAndPopup(dallasInfo, MAPBOX_TOKEN, map);
 
 
-    //DECLARING MY VARIABLES
-    var searchBar = $('#searchBar');
-    // console.log(searchBar);
-    var button = $('#btn');
-    // console.log(button);
-    var current = $('#cityState');
-    // console.log(current);
+    // //DECLARING MY VARIABLES
+    // var searchBar = $('#searchBar');
+    // // console.log(searchBar);
+    // var button = $('#btn');
+    // // console.log(button);
+    // var current = $('#cityState');
+    // // console.log(current);
 
     // //CARD UNO
     // var date = $('#date');
@@ -272,37 +298,99 @@
     // var pressure2 = $('#pressure2');
     // var precipitation2 = $('#precipitation2');
 
-    $(window).ready(function() {
 
-        //REQUESTING DATA FROM OPEN WEATHER
-        function fetchWeather(city, country) {
-            $.get("http://api.openweathermap.org/data/2.5/forecast?q=" +
-                city +
-                "," +
-                country +
-                "&units=imperial&appid=" +
-                openWEATHER)
-                // .then((response) => response.json())
-                // .then((data) => this.displayWeather(data))
-                .then((data) => console.log(data));
-        }
-        fetchWeather("dallas", "us");
-        fetchWeather("mexico city", "mx");
-        fetchWeather("london", "gb");
 
-        function contentCards(forecastData) {
-            let html = '';
-            html += `<div class="card" id="weatherContent">-->
-            <h2 id="date">${forecastData.list[i].dt_txt.slice(0, 10)}</h2>
-            <div id="temp">${forecastData.list[i].main.temp}°F</div>
-            <img src="" alt="" class="icon">
-            <div id="description">${forecastData.list[0].weather[0].description}</div>
-            <div id="humidity">Humidity: 71%</div>
-            <div id="wind">Wind: 5.84 mph</div>
-            <div id="pressure">Pressure: 29.97 inHg</div>
-        </div>`
-        }
-    });
+            // fetchWeather: (e) => {
+            //
+            //     //USING TEMPLATE LITERAL, I WILL SET UP THE URL TO BE USER FRIENDLY
+            //     let city = userInput.val();
+            //     let country = userInput.val();
+            //     let key = openWEATHER;
+            //     let url = `api.openweathermap.org/data/2.5/forecast?q=
+            //     ${city}
+            //     ,
+            //     ${country}
+            //     &units=imperial&appid=
+            //     ${key}`
+            //
+            //     //CALLING OPENWEATHER... BEEP! BEEP!
+            //     fetch(url)
+            //         .then((response) => {
+            //             return response.json();
+            //         })
+            //         .then((data) => {
+            //             console.log(data);
+            //         });
+            // }
+
+
+
+//START AN ARRAY OF FUNCTIONS. KEEPING MY FLOW ONGOING; HELP ME TO TELL MY STORY EFFICIENTLY AND MANEUVER THE DOM EASILY...
+
+        //FUNCTION NAME + PARAMETER(s) => COMMAND: THE BEGINNING aka USER'S INPUT..
+        // start: () => {
+
+        //     let btn = $('#btn');
+        //     console.log(btn);
+        //
+        //     userInput.click(weather.fetchWeather);
+        //
+        // },
+
+        //WHEN BTN CLICKED, I WILL USE THE get METHOD TO CALL OPENWEATHER API FOR THE USER'S VALUE DATA!
+
+
+
+        // function contentCards(data) {
+        //     let html = '';
+        //     for (var i = 0; i < 5; i++) {
+        //         html += `<div class="card" id="weatherContent">-->
+        //     <h2 id="date">${data.list[i].dt_txt.slice(0, 10)}</h2>
+        //     <div id="temp">${data.list[i].main.temp}°F</div>
+        //     <img src="" alt="" class="icon">
+        //     <div id="description">${data.list[i].weather[0].description}</div>
+        //     <div id="humidity">Humidity: ${data.list[0].main.humidity}%</div>
+        //     <div id="wind">Wind: ${data.list[0].wind.speed}mph</div>
+        //     <div id="pressure">Pressure: ${data.list[0].main.pressure}inHg</div>
+        // </div>`
+        //     }
+        //     return html;
+        // }
+        //
+        //     //REQUESTING DATA FROM OPEN WEATHER
+        //     function fetchWeather(city, country) {
+        //         $.get("http://api.openweathermap.org/data/2.5/forecast?q=" +
+        //             city +
+        //             "," +
+        //             country +
+        //             "&units=imperial&appid=" +
+        //             openWEATHER)
+        //             // .then((response) => response.json)
+        //             // .then((data) => this.displayWeather(data))
+        //             .then((data) => console.log(data));
+        //
+        //     }
+        //     fetchWeather("dallas", "us");
+        //     fetchWeather("mexico city", "mx");
+        //     fetchWeather("london", "gb");
+
+
+        // function refreshWeather(city, country) {
+        //     function onSuccess(data, status, jqXhr) {
+        //         let forecastData = contentCards(data);
+        //         $('#forecast').html(forecastData);
+        //         console.log(status);
+        //     }
+        //     $.get('api.openweathermap.org/data/2.5/forecast?q=' +
+        //         city +
+        //         ',' +
+        //         country +
+        //         '&units=imperial&appid=' +
+        //         openWEATHER).done(onSuccess);
+        // }
+        // refreshWeather();
+
+
 
 </script>
 </body>
