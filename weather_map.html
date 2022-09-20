@@ -147,7 +147,6 @@
 
     $(window).ready(function() {
 
-
         function fetchWeather(city, country) {
             $.get("http://api.openweathermap.org/data/2.5/forecast?q=" +
                 city +
@@ -174,20 +173,23 @@
         console.log(forecastDisplayBox);
 
         function cardHTML(data) {
-            let html = ''; //CALLING AN EMPTY ARRAY TO RENDER THE DATA EACH TIME ITS CALLED
-            for (var i = 0; i < 5; i++) { //SETTING UP A LOOP FUNCTION TO CREATE 5 NEW CARDS: ONE FOR EACH DAY
-                html += `<div class="card" id="weatherContent">-->
-            <h2 id="date">${data.list[i].dt_txt.slice(0, 10)}</h2>
-            <div id="temp">${data.list[i].main.temp}°F</div>
-            <img src="" alt="" class="icon">
-            <div id="description">${data.list[i].weather[0].description}</div>
-            <div id="humidity">Humidity: ${data.list[0].main.humidity}%</div>
-            <div id="wind">Wind: ${data.list[i].wind.speed}mph</div>
-            <div id="pressure">Pressure: ${data.list[i].main.pressure}inHg</div>
-        </div>`
-            }
-            return html;
-        }
+            let html = ''; //CALLING AN EMPTY HTML STRING TO RENDER THE DATA EACH TIME ITS CALLED
+            data.list.forEach((value, index) => {
+                if (index > 0) {
+                    var dayname = new Date(value.dt * 1000).toLocaleDateString("en", {
+                        weekday: "long",
+                    });
+                    html += `<div class="card" id="weatherContent">-->
+                            <h2 id="date">${data.list[i].dt_txt.slice(0, 10)}</h2>
+                            <div id="temp">${data.list[i].main.temp}°F</div>
+                            <img src="" alt="" class="icon">
+                            <div id="description">${data.list[i].weather[0].description}</div>
+                            <div id="humidity">Humidity: ${data.list[0].main.humidity}%</div>
+                            <div id="wind">Wind: ${data.list[0].wind.speed}mph</div>
+                            <div id="pressure">Pressure: ${data.list[0].main.pressure}inHg</div>
+                        </div>`
+                    return html;
+                }
 
 
     });
