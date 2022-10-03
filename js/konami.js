@@ -29,7 +29,7 @@ $(window).ready(function() {
     });
 });
 
-//DECLARING MY VARIABLES
+// DECLARING MY VARIABLES
 var keysPressed = [];
 
 var konami = [38,38,40,40,37,39,37,39,66,65]; //NO 13 FOR ENTER
@@ -38,7 +38,7 @@ let keyCount= 0;
 
 // var secretCode = konami.length;
 // console.log(secretCode);
-//
+
 // let inputCode = input.length;
 // console.log(inputCode);
 
@@ -59,52 +59,78 @@ $(window).ready(function() {
     body.keyup(function(e) {
         console.log("keyup successful!");
         // console.log(e.keyCode);
+
         let user = e.keyCode;
         console.log(user);
-        keysPressed.push(user);
-        console.log(keysPressed);
+
+        // keysPressed.push(user);
+        // console.log(keysPressed);
+        // console.log(konami);
         // let inputCode = input.push("keysPressed");
         // console.log(inputCode);
+        // //
 
 
 
-        switch (user) {
-            case keysPressed[0] === konami[0]:
-                console.log("yay");
-                break;
-            case keysPressed[1] === konami[1]:
-                console.log("yay");
-                break;
-            case keysPressed[2] === konami[2]:
-                 console.log("yay");
-                 break;
-            case keysPressed[3] === konami[3]:
-                console.log("yay");
-                break;
-            case keysPressed[4] === konami[4]:
-                console.log("yay");
-                break;
-            case keysPressed[5] === konami[5]:
-                console.log("yay");
-                break;
-            case keysPressed[6] === konami[6]:
-                console.log("yay");
-                break;
-            case keysPressed[7] === konami[7]:
-                console.log("yay");
-                break;
-            case keysPressed[8] === konami[8]:
-                console.log("yay");
-                break;
-            case keysPressed[9] === konami[9]:
-                console.log("yay");
-                break;
-            case keysPressed[10] === konami[10]:
-                alert("YAY! YOU DID IT!");
-                console.log("yay");
-                keyCount = 0;
-                break;
+        //USING INDEX OF TO COMPARE MY PUSHED ARRAY WITH THE KONAMI ARRAY. MAKING SURE ITS THE RIGHT KEY CODE AND NOT THE SAME KEY CODE AS THE LAST ONE
+        if(konami.indexOf(user) < 0 || user != konami[keyCount]) {
+            console.log("no");
+            keyCount = 0;
+        } else {
+            keyCount++;
+            console.log("yay");
         }
+
+        if(keyCount === konami.length) {
+            alert("well done :)");
+        }
+
+
+
+
+        // //
+        // switch (keysPressed) {
+        //     case keysPressed[0] === konami[0]:
+        //         console.log("yay");
+        //         count++;
+        //         break;
+        //     case keysPressed[1] === konami[1]:
+        //         console.log("yay");
+        //         count++;
+        //         break;
+        //     case keysPressed[2] === konami[2]:
+        //          console.log("yay");
+        //          break;
+        //     case keysPressed[3] === konami[3]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[4] === konami[4]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[5] === konami[5]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[6] === konami[6]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[7] === konami[7]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[8] === konami[8]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[9] === konami[9]:
+        //         console.log("yay");
+        //         break;
+        //     case keysPressed[10] === konami[10]:
+        //         alert("YAY! YOU DID IT!");
+        //         console.log("yay");
+        //         keyCount = 0;
+        //         break;
+        //     default:
+        //         console.log("no");
+        //         keyCount = 0;
+        // }
 
 
 
@@ -153,8 +179,8 @@ $(window).ready(function() {
         //         // reset();
         //     }
         // }
-
-
+        //
+        //
         // for(let i = 0; i < konami.length; i += 1)
         // if(input[i] === konami[i]) {
         //     console.log("yay!");
